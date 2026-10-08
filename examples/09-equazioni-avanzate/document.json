@@ -1,0 +1,77 @@
+{
+  "Blocks": [
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Formule strutturate",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Title",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "equation",
+      "Latex": "\\sum_{i=1}^{n}{x_i}",
+      "Inline": false,
+      "BookmarkName": "EqSum",
+      "Numbered": true
+    },
+    {
+      "kind": "equation",
+      "Latex": "\\int_0^L{q(x)}\\,dx",
+      "Inline": false,
+      "BookmarkName": null,
+      "Numbered": false
+    },
+    {
+      "kind": "equation",
+      "Latex": "\\prod_{i=1}^{n}{a_i}",
+      "Inline": false,
+      "BookmarkName": null,
+      "Numbered": false
+    },
+    {
+      "kind": "equation",
+      "Latex": "A=\\begin{pmatrix}a\u0026b\\\\c\u0026d\\end{pmatrix}",
+      "Inline": false,
+      "BookmarkName": null,
+      "Numbered": false
+    },
+    {
+      "kind": "equation",
+      "Latex": "B=\\begin{bmatrix}1\u00260\\\\0\u00261\\end{bmatrix}",
+      "Inline": false,
+      "BookmarkName": null,
+      "Numbered": false
+    },
+    {
+      "kind": "equation",
+      "Latex": "C=\\begin{matrix}1\u00262\\\\3\u00264\\end{matrix}",
+      "Inline": false,
+      "BookmarkName": null,
+      "Numbered": false
+    },
+    {
+      "kind": "field",
+      "Instruction": "REF EqSum \\h",
+      "Placeholder": "Riferimento da aggiornare",
+      "StyleId": "Normal"
+    }
+  ],
+  "SourceBase64": null,
+  "Styles": [],
+  "Layout": null,
+  "Properties": null,
+  "Replacements": null,
+  "Targets": [],
+  "StrictPlaceholders": true
+}

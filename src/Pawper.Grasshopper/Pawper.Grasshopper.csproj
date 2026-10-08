@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+ <PropertyGroup><TargetFramework>net8.0-windows</TargetFramework><UseWindowsForms>true</UseWindowsForms><CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies><RhinoInstall Condition="'$(RhinoInstall)' == ''">C:\Program Files\Rhino 8</RhinoInstall></PropertyGroup>
+ <ItemGroup><ProjectReference Include="../Pawper.Core/Pawper.Core.csproj" /><Reference Include="RhinoCommon"><HintPath>$(RhinoInstall)\System\RhinoCommon.dll</HintPath><Private>false</Private></Reference><Reference Include="Grasshopper"><HintPath>$(RhinoInstall)\Plug-ins\Grasshopper\Grasshopper.dll</HintPath><Private>false</Private></Reference><Reference Include="GH_IO"><HintPath>$(RhinoInstall)\Plug-ins\Grasshopper\GH_IO.dll</HintPath><Private>false</Private></Reference></ItemGroup>
+ <Target Name="CreateGrasshopperAssembly" AfterTargets="Build"><Copy SourceFiles="$(TargetPath)" DestinationFiles="$(TargetDir)$(TargetName).gha" /></Target>
+</Project>

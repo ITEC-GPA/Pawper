@@ -1,0 +1,253 @@
+[
+  {
+    "Id": 1,
+    "Slug": "primo-documento",
+    "Title": "Primo documento",
+    "Purpose": "Creare, comporre e salvare un documento senza Word installato.",
+    "Features": [
+      "NewDocumentComponent",
+      "ComposeComponent",
+      "SaveComponent",
+      "OpenResultComponent",
+      "InspectorComponent",
+      "RelativePathComponent"
+    ]
+  },
+  {
+    "Id": 2,
+    "Slug": "testo-formattato",
+    "Title": "Testo formattato",
+    "Purpose": "Combinare frammenti con propriet\u00E0 tipografiche diverse.",
+    "Features": [
+      "TextRunComponent",
+      "ParagraphComponent"
+    ]
+  },
+  {
+    "Id": 3,
+    "Slug": "stili-e-titoli",
+    "Title": "Stili e titoli",
+    "Purpose": "Usare identificatori indipendenti dalla lingua di Word e tutti i livelli di titolo.",
+    "Features": [
+      "StyleComponent",
+      "HeadingComponent",
+      "style-character",
+      "style-table"
+    ]
+  },
+  {
+    "Id": 4,
+    "Slug": "elenchi",
+    "Title": "Elenchi multilivello",
+    "Purpose": "Numerare voci, annidare livelli, usare punti e riavviare un elenco.",
+    "Features": [
+      "ListComponent"
+    ]
+  },
+  {
+    "Id": 5,
+    "Slug": "tabella-numerica",
+    "Title": "Tabelle intere da dati e testo",
+    "Purpose": "Creare tabelle con un solo componente da righe, colonne, testo Excel e CSV.",
+    "Features": [
+      "QuickTableComponent",
+      "TextTableComponent",
+      "NumberComponent",
+      "quick-table-rows",
+      "quick-table-columns",
+      "quick-table-numeric-culture-units",
+      "quick-table-no-header-strict",
+      "table-missing-values",
+      "table-preview",
+      "text-table-tsv-auto",
+      "text-table-csv-explicit-no-header",
+      "text-table-quoted-multiline",
+      "text-table-leading-zeros"
+    ]
+  },
+  {
+    "Id": 6,
+    "Slug": "celle-e-unioni",
+    "Title": "Celle e unioni",
+    "Purpose": "Unire righe e colonne e inserire contenuti formattati nelle celle.",
+    "Features": [
+      "CellComponent",
+      "table-rowspan",
+      "table-colspan",
+      "conditional-fill",
+      "rich-cells"
+    ]
+  },
+  {
+    "Id": 7,
+    "Slug": "immagini-e-viste",
+    "Title": "Immagini e viste Rhino",
+    "Purpose": "Incorporare PNG e JPEG, mantenere le proporzioni e acquisire viste attive o nominate.",
+    "Features": [
+      "ImageComponent",
+      "CaptureViewComponent",
+      "image-base64",
+      "image-file",
+      "image-alt",
+      "image-caption"
+    ]
+  },
+  {
+    "Id": 8,
+    "Slug": "equazioni-base",
+    "Title": "Equazioni modificabili",
+    "Purpose": "Scrivere formule inline e separate con frazioni, radici, indici ed esponenti.",
+    "Features": [
+      "EquationComponent",
+      "equation-inline",
+      "equation-fraction",
+      "equation-root",
+      "equation-scripts",
+      "equation-greek"
+    ]
+  },
+  {
+    "Id": 9,
+    "Slug": "equazioni-avanzate",
+    "Title": "Equazioni avanzate",
+    "Purpose": "Sommatorie, integrali, prodotti, matrici e riferimenti alle equazioni.",
+    "Features": [
+      "equation-sum",
+      "equation-integral",
+      "equation-matrix",
+      "equation-numbering",
+      "FieldComponent"
+    ]
+  },
+  {
+    "Id": 10,
+    "Slug": "pagine-e-sezioni",
+    "Title": "Pagine e sezioni",
+    "Purpose": "Gestire pagina iniziale, pari/dispari, numeri pagina e orientamenti diversi.",
+    "Features": [
+      "LayoutComponent",
+      "SectionComponent",
+      "BreakComponent",
+      "layout-first-even",
+      "page-fields"
+    ]
+  },
+  {
+    "Id": 11,
+    "Slug": "sommari-e-didascalie",
+    "Title": "Sommari e didascalie",
+    "Purpose": "Creare campi Word per sommario ed elenchi figure/tabelle, da aggiornare in Word.",
+    "Features": [
+      "field-toc",
+      "field-list-figures",
+      "field-list-tables",
+      "field-caption"
+    ]
+  },
+  {
+    "Id": 12,
+    "Slug": "link-e-segnalibri",
+    "Title": "Link e segnalibri",
+    "Purpose": "Collegamenti esterni e interni e riferimenti al testo o alla pagina.",
+    "Features": [
+      "BookmarkComponent",
+      "hyperlink-external",
+      "hyperlink-internal",
+      "field-ref",
+      "field-pageref"
+    ]
+  },
+  {
+    "Id": 13,
+    "Slug": "metadati",
+    "Title": "Metadati",
+    "Purpose": "Impostare propriet\u00E0 standard e personalizzate e ispezionare il documento.",
+    "Features": [
+      "MetadataComponent",
+      "metadata-custom"
+    ]
+  },
+  {
+    "Id": 14,
+    "Slug": "template-testuale",
+    "Title": "Template con placeholder",
+    "Purpose": "Sostituire token divisi tra run nel corpo, nelle intestazioni e nei pi\u00E8 di pagina.",
+    "Features": [
+      "FillTemplateComponent",
+      "template-docx",
+      "placeholder-split",
+      "placeholder-repeated",
+      "template-style",
+      "template-header-footer"
+    ]
+  },
+  {
+    "Id": 15,
+    "Slug": "template-strutturato",
+    "Title": "Content control e segnalibri",
+    "Purpose": "Riempire un DOTX con blocchi diversi e sostituire un segnalibro inline.",
+    "Features": [
+      "ControlComponent",
+      "TargetComponent",
+      "template-dotx",
+      "target-blocks",
+      "target-bookmark"
+    ]
+  },
+  {
+    "Id": 16,
+    "Slug": "ripetizioni-e-condizioni",
+    "Title": "Ripetizioni e condizioni",
+    "Purpose": "Ripetere contenuti per record e includere sezioni solo quando richiesto.",
+    "Features": [
+      "RepeatComponent",
+      "ConditionalComponent"
+    ]
+  },
+  {
+    "Id": 17,
+    "Slug": "note-e-commenti",
+    "Title": "Note e commenti",
+    "Purpose": "Note a pi\u00E8 di pagina, note finali e commenti modificabili.",
+    "Features": [
+      "NoteComponent",
+      "CommentComponent",
+      "note-foot",
+      "note-end"
+    ]
+  },
+  {
+    "Id": 18,
+    "Slug": "importazione",
+    "Title": "Importazione selettiva",
+    "Purpose": "Importare due volte gli stessi blocchi rimappando stili, numerazioni, risorse e segnalibri.",
+    "Features": [
+      "ImportComponent",
+      "import-styles",
+      "import-numbering",
+      "import-images",
+      "import-bookmarks"
+    ]
+  },
+  {
+    "Id": 19,
+    "Slug": "batch",
+    "Title": "Generazione batch",
+    "Purpose": "Un documento per ramo del Data Tree, con percorsi distinti e controllo delle collisioni.",
+    "Features": [
+      "BatchComponent",
+      "batch-paths",
+      "branch-isolation",
+      "save-trigger"
+    ]
+  },
+  {
+    "Id": 20,
+    "Slug": "relazione-completa",
+    "Title": "Relazione tecnica completa",
+    "Purpose": "Combinare copertina, sommario, dati, immagini, equazioni, note e sezioni.",
+    "Features": [
+      "integrated-report"
+    ]
+  }
+]

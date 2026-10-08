@@ -1,0 +1,101 @@
+{
+  "Blocks": [
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Navigazione",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Title",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Documentazione Rhino",
+          "Format": null,
+          "Link": "https://developer.rhino3d.com/",
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Vai ai risultati",
+          "Format": null,
+          "Link": "#Risultati",
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "bookmark",
+      "Name": "Risultati",
+      "Content": [
+        {
+          "kind": "paragraph",
+          "Runs": [
+            {
+              "Text": "Risultati verificati",
+              "Format": null,
+              "Link": null,
+              "Math": null,
+              "Field": null,
+              "StyleId": null
+            }
+          ],
+          "StyleId": "Heading1",
+          "Format": null,
+          "ListLevel": null,
+          "Bullet": false,
+          "ListKey": "default"
+        }
+      ]
+    },
+    {
+      "kind": "field",
+      "Instruction": "REF Risultati \\h",
+      "Placeholder": "Aggiornare il campo in Word",
+      "StyleId": "Normal"
+    },
+    {
+      "kind": "field",
+      "Instruction": "PAGEREF Risultati \\h",
+      "Placeholder": "Aggiornare il campo in Word",
+      "StyleId": "Normal"
+    }
+  ],
+  "SourceBase64": null,
+  "Styles": [],
+  "Layout": null,
+  "Properties": null,
+  "Replacements": null,
+  "Targets": [],
+  "StrictPlaceholders": true
+}

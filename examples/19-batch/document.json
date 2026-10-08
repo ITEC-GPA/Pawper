@@ -1,0 +1,47 @@
+{
+  "Blocks": [
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Report batch",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Title",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Questo \u00E8 il documento base. La definizione produce tre documenti con nomi distinti.",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    }
+  ],
+  "SourceBase64": null,
+  "Styles": [],
+  "Layout": null,
+  "Properties": null,
+  "Replacements": null,
+  "Targets": [],
+  "StrictPlaceholders": true
+}

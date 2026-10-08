@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="Pawper paper and paw logo">
+  <path d="M4 2H15L21 8V22H4Z" fill="#fffdf5" stroke="#144e4a" stroke-width="1.45" stroke-linejoin="round"/>
+  <path d="M15 2V8H21" fill="#d3e8dc" stroke="#144e4a" stroke-width="1.45" stroke-linejoin="round"/>
+  <g fill="#144e4a">
+    <ellipse cx="12.5" cy="17.25" rx="4" ry="2.75"/>
+    <ellipse cx="8.6" cy="13.6" rx="1.6" ry="2"/>
+    <ellipse cx="11.9" cy="11.5" rx="1.6" ry="2"/>
+    <ellipse cx="15.55" cy="12" rx="1.55" ry="2"/>
+    <ellipse cx="18.4" cy="14.3" rx="1.4" ry="1.9"/>
+  </g>
+</svg>

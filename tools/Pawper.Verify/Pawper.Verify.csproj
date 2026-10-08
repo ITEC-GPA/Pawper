@@ -1,0 +1,1 @@
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType></PropertyGroup><ItemGroup><ProjectReference Include="../../src/Pawper.Core/Pawper.Core.csproj" /></ItemGroup><ItemGroup><Compile Include="../TableSamples.cs" Link="TableSamples.cs" /></ItemGroup></Project>

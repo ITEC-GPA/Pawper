@@ -1,0 +1,52 @@
+namespace Pawper.Grasshopper;
+
+// Persistent IDs from the first release. Branding and assembly names must not change them.
+internal static class StableIds
+{
+    internal static readonly IReadOnlyDictionary<string, Guid> Values = new Dictionary<string, Guid>
+    {
+        ["Assembly"] = new("7e1b1895-f3de-d9c4-6911-887ffbe9d923"),
+        ["BatchComponent"] = new("6ad50a4a-f4f1-557b-d984-d5a8626a01fb"),
+        ["BookmarkComponent"] = new("0493f136-307c-318f-424b-6fa5521c1c82"),
+        ["BreakComponent"] = new("6505e52f-3fd0-a47c-a5c0-86411a577c72"),
+        ["CaptureViewComponent"] = new("853355e2-093b-f4c7-1dec-0dd66069201b"),
+        ["CellComponent"] = new("f1612551-d9b9-f3fe-0f96-e3bda97c01e5"),
+        ["CommentComponent"] = new("e6a3d724-9af1-3303-86b7-54b929ba848a"),
+        ["ComposeComponent"] = new("5a02fa38-1259-5c7b-c6fd-bfcc3ef84f0f"),
+        ["ConditionalComponent"] = new("988b2725-5ca5-646e-a388-e64a061ada3f"),
+        ["ControlComponent"] = new("07aef5a4-2649-3525-65c6-4c0362f0371b"),
+        ["EquationComponent"] = new("d27d0ec0-8661-e7cb-400b-23ffbced3b18"),
+        ["FieldComponent"] = new("ead6551f-f601-2e29-0c3e-f9cbe0193564"),
+        ["FillTemplateComponent"] = new("a23fb9b1-e127-e4e0-380c-8406d85a0885"),
+        ["HeadingComponent"] = new("8df570ca-919b-c4b9-c040-de9da017489f"),
+        ["ImageComponent"] = new("17f7156e-78cc-093b-3ae0-64b00ce1deb4"),
+        ["ImportComponent"] = new("edad440c-baeb-09fc-7c16-e6b8de956b1a"),
+        ["InspectorComponent"] = new("f968ac0d-d69e-75ff-a28b-e1567da4b058"),
+        ["LayoutComponent"] = new("075f96bb-875f-2221-f9d4-33f5cf7d7ced"),
+        ["ListComponent"] = new("a8c49496-f04c-0912-6855-ebfb25135fc1"),
+        ["MetadataComponent"] = new("9b1ec73d-5750-79f4-76ad-b0273036fcba"),
+        ["NewDocumentComponent"] = new("72472fa8-6a58-5932-f734-0c3b783c315b"),
+        ["NoteComponent"] = new("77344fb2-8f33-7f9d-9b28-b8c0efbe6733"),
+        ["NumberComponent"] = new("466a12b5-2ef1-5a80-37ee-7d6aff81be8e"),
+        ["OpenResultComponent"] = new("5fe764ee-bcd6-e47e-9278-f2669aa565fd"),
+        ["ParagraphComponent"] = new("63e4af75-2751-d732-7cfb-d45be7507c2a"),
+        ["Param/Cell"] = new("1dad64c9-5663-09a0-86ce-e3d805bcc9c4"),
+        ["Param/ContentBlock"] = new("15387148-6ee3-4606-07b2-f2ca063eb9a7"),
+        ["Param/Document"] = new("28544dc3-006d-2a81-0a40-9abf5f867607"),
+        ["Param/PageLayout"] = new("b5292e8d-e8be-99ea-1fb8-d7235eb55c74"),
+        ["Param/Style"] = new("461b4c7d-fdab-d630-d9ba-acc748f672c7"),
+        ["Param/TemplateTarget"] = new("8031e25c-e1c2-a273-c29f-2e830b521cf1"),
+        ["Param/TextRun"] = new("d0add0fa-d60a-f710-7f22-9ca50136eebb"),
+        ["RelativePathComponent"] = new("3d8c92f8-31bb-0993-fb50-b21b710dc97e"),
+        ["RepeatComponent"] = new("93eab2e4-ef72-89da-e01f-8f719d01e1fe"),
+        ["SaveComponent"] = new("e20a84e9-293e-bbaa-d6f8-5aded6dd615a"),
+        ["SectionComponent"] = new("887a7f16-3c79-694a-3ebc-cf30e37dd0c4"),
+        ["StyleComponent"] = new("4755a81c-4b7f-9b79-2547-7f370f326f0f"),
+        ["QuickTableComponent"] = new("4a2d7c44-173c-41ac-9cd0-62a94ace3391"),
+        ["TextTableComponent"] = new("ccff9ba2-9552-40c5-bb1a-092f534c3272"),
+        ["TableComponent"] = new("4a849ff1-81a8-9d35-1c84-de98d8962bb1"),
+        ["TableRowsComponent"] = new("8746ae62-fcb5-3cef-3751-3254b86e98c5"),
+        ["TargetComponent"] = new("a802729c-9f23-096a-4de7-34d56d74a4d2"),
+        ["TextRunComponent"] = new("aa93acd7-27b8-b270-a618-73cdc3524c49"),
+    };
+}

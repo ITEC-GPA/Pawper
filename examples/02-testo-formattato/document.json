@@ -1,0 +1,254 @@
+{
+  "Blocks": [
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Testo e formattazione",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Title",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Normale ",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        },
+        {
+          "Text": "grassetto ",
+          "Format": {
+            "Font": null,
+            "Size": null,
+            "Bold": true,
+            "Italic": false,
+            "Underline": false,
+            "Color": null,
+            "Script": null
+          },
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        },
+        {
+          "Text": "corsivo ",
+          "Format": {
+            "Font": null,
+            "Size": null,
+            "Bold": false,
+            "Italic": true,
+            "Underline": false,
+            "Color": null,
+            "Script": null
+          },
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        },
+        {
+          "Text": "sottolineato ",
+          "Format": {
+            "Font": null,
+            "Size": null,
+            "Bold": false,
+            "Italic": false,
+            "Underline": true,
+            "Color": null,
+            "Script": null
+          },
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        },
+        {
+          "Text": "colore ",
+          "Format": {
+            "Font": null,
+            "Size": null,
+            "Bold": false,
+            "Italic": false,
+            "Underline": false,
+            "Color": "24445C",
+            "Script": null
+          },
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        },
+        {
+          "Text": "x",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        },
+        {
+          "Text": "2",
+          "Format": {
+            "Font": null,
+            "Size": null,
+            "Bold": false,
+            "Italic": false,
+            "Underline": false,
+            "Color": null,
+            "Script": "superscript"
+          },
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        },
+        {
+          "Text": " H",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        },
+        {
+          "Text": "2",
+          "Format": {
+            "Font": null,
+            "Size": null,
+            "Bold": false,
+            "Italic": false,
+            "Underline": false,
+            "Color": null,
+            "Script": "subscript"
+          },
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        },
+        {
+          "Text": "O",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Paragrafo con rientro e spaziatura.\nSeconda riga con un\u0027interruzione esplicita.",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": {
+        "Alignment": "both",
+        "Before": 6,
+        "After": 12,
+        "Line": 1.15,
+        "LeftMm": 5,
+        "RightMm": 0,
+        "FirstLineMm": 5,
+        "KeepNext": false
+      },
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Testo piccolo e grande",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Aptos 10 ",
+          "Format": {
+            "Font": "Aptos",
+            "Size": 10,
+            "Bold": false,
+            "Italic": false,
+            "Underline": false,
+            "Color": null,
+            "Script": null
+          },
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        },
+        {
+          "Text": "Arial 16",
+          "Format": {
+            "Font": "Arial",
+            "Size": 16,
+            "Bold": false,
+            "Italic": false,
+            "Underline": false,
+            "Color": null,
+            "Script": null
+          },
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    }
+  ],
+  "SourceBase64": null,
+  "Styles": [],
+  "Layout": null,
+  "Properties": null,
+  "Replacements": null,
+  "Targets": [],
+  "StrictPlaceholders": true
+}

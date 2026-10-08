@@ -1,0 +1,56 @@
+{
+  "Blocks": [
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Propriet\u00E0 del progetto",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Title",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Le propriet\u00E0 sono memorizzate nel pacchetto DOCX.",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    }
+  ],
+  "SourceBase64": null,
+  "Styles": [],
+  "Layout": null,
+  "Properties": {
+    "Title": "Scheda progetto",
+    "Author": "Studio dimostrativo",
+    "Subject": "Documentazione parametrica",
+    "Keywords": "Pawper; report",
+    "Custom": {
+      "Codice": "PRJ-001",
+      "Revisione": "A"
+    }
+  },
+  "Replacements": null,
+  "Targets": [],
+  "StrictPlaceholders": true
+}

@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+ <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0-windows</TargetFramework><UseWindowsForms>true</UseWindowsForms><RhinoInstall>C:\Program Files\Rhino 8</RhinoInstall></PropertyGroup>
+ <ItemGroup><ProjectReference Include="../../src/Pawper.Grasshopper/Pawper.Grasshopper.csproj" /><PackageDownload Include="Rhino.Inside" Version="[8.0.7-beta]" /><Reference Include="Rhino.Inside"><HintPath>$(NuGetPackageRoot)rhino.inside\8.0.7-beta\lib\net8.0-windows7.0\Rhino.Inside.dll</HintPath></Reference>
+ <Reference Include="RhinoCommon"><HintPath>$(RhinoInstall)\System\RhinoCommon.dll</HintPath><Private>false</Private></Reference><Reference Include="Grasshopper"><HintPath>$(RhinoInstall)\Plug-ins\Grasshopper\Grasshopper.dll</HintPath><Private>false</Private></Reference><Reference Include="GH_IO"><HintPath>$(RhinoInstall)\Plug-ins\Grasshopper\GH_IO.dll</HintPath><Private>false</Private></Reference></ItemGroup>
+<ItemGroup><Compile Include="../TableSamples.cs" Link="TableSamples.cs" /></ItemGroup></Project>

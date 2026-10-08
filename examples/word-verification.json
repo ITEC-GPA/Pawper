@@ -1,0 +1,247 @@
+[
+  {
+    "File": "01-primo-documento\\expected.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "01-primo-documento\\grasshopper-verified.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "02-testo-formattato\\expected.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "02-testo-formattato\\grasshopper-verified.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "03-stili-e-titoli\\expected.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "03-stili-e-titoli\\grasshopper-verified.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "04-elenchi\\expected.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "04-elenchi\\grasshopper-verified.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "05-tabella-numerica\\expected.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "05-tabella-numerica\\grasshopper-verified.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "06-celle-e-unioni\\expected.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "06-celle-e-unioni\\grasshopper-verified.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "07-immagini-e-viste\\expected.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "07-immagini-e-viste\\grasshopper-verified.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "08-equazioni-base\\expected.docx",
+    "Success": true,
+    "EditableEquations": 3
+  },
+  {
+    "File": "08-equazioni-base\\grasshopper-verified.docx",
+    "Success": true,
+    "EditableEquations": 3
+  },
+  {
+    "File": "09-equazioni-avanzate\\expected.docx",
+    "Success": true,
+    "EditableEquations": 6
+  },
+  {
+    "File": "09-equazioni-avanzate\\grasshopper-verified.docx",
+    "Success": true,
+    "EditableEquations": 6
+  },
+  {
+    "File": "10-pagine-e-sezioni\\expected.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "10-pagine-e-sezioni\\grasshopper-verified.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "11-sommari-e-didascalie\\expected.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "11-sommari-e-didascalie\\grasshopper-verified.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "12-link-e-segnalibri\\expected.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "12-link-e-segnalibri\\grasshopper-verified.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "13-metadati\\expected.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "13-metadati\\grasshopper-verified.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "14-template-testuale\\expected.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "14-template-testuale\\grasshopper-verified.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "15-template-strutturato\\expected.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "15-template-strutturato\\grasshopper-verified.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "16-ripetizioni-e-condizioni\\expected.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "16-ripetizioni-e-condizioni\\grasshopper-verified.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "17-note-e-commenti\\expected.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "17-note-e-commenti\\grasshopper-verified.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "18-importazione\\expected.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "18-importazione\\grasshopper-verified.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "19-batch\\batch-1.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "19-batch\\batch-2.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "19-batch\\batch-3.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "19-batch\\batch-live-1.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "19-batch\\batch-live-2.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "19-batch\\batch-live-3.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "19-batch\\expected.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "19-batch\\grasshopper-verified.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "20-relazione-completa\\expected.docx",
+    "Success": true,
+    "EditableEquations": 1
+  },
+  {
+    "File": "20-relazione-completa\\grasshopper-verified.docx",
+    "Success": true,
+    "EditableEquations": 1
+  },
+  {
+    "File": "20-relazione-completa\\output.docx",
+    "Success": true,
+    "EditableEquations": 1
+  },
+  {
+    "File": "assets\\source.docx",
+    "Success": true,
+    "EditableEquations": 0
+  },
+  {
+    "File": "assets\\template.docx",
+    "Success": true,
+    "EditableEquations": 0
+  }
+]

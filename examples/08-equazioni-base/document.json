@@ -1,0 +1,77 @@
+{
+  "Blocks": [
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Equazioni native",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Title",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "La relazione ",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        },
+        {
+          "Text": "",
+          "Format": null,
+          "Link": null,
+          "Math": "\\sigma=\\frac{N}{A}",
+          "Field": null,
+          "StyleId": null
+        },
+        {
+          "Text": " \u00E8 una formula inline modificabile.",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "equation",
+      "Latex": "x_1^2\u002B\\sqrt[3]{a}=\\frac{b}{c}",
+      "Inline": false,
+      "BookmarkName": null,
+      "Numbered": false
+    },
+    {
+      "kind": "equation",
+      "Latex": "\\alpha\u002B\\beta\u002B\\gamma=\\pi",
+      "Inline": true,
+      "BookmarkName": null,
+      "Numbered": false
+    }
+  ],
+  "SourceBase64": null,
+  "Styles": [],
+  "Layout": null,
+  "Properties": null,
+  "Replacements": null,
+  "Targets": [],
+  "StrictPlaceholders": true
+}

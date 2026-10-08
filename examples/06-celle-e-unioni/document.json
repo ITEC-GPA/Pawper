@@ -1,0 +1,287 @@
+{
+  "Blocks": [
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Tabella composta",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Title",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "table",
+      "Rows": [
+        [
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Verifiche",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 2,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Esito",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          }
+        ],
+        [
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Gruppo A",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 2,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Resistenza",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "OK",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": "DDEEDD",
+            "Alignment": "center"
+          }
+        ],
+        [
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Deformazione",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "ATTENZIONE",
+                    "Format": {
+                      "Font": null,
+                      "Size": null,
+                      "Bold": true,
+                      "Italic": false,
+                      "Underline": false,
+                      "Color": null,
+                      "Script": null
+                    },
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": "FFF0CC",
+            "Alignment": "left"
+          }
+        ],
+        [
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Schema",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 2,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "image",
+                "DataBase64": "iVBORw0KGgoAAAANSUhEUgAABLAAAAFoCAIAAADIFpV9AAAfz0lEQVR4nO3debzVc\u002BL48c/p3vZNqbQrihqGxpgKI/VFlrKMQZbIEs0IkyGiIdkbfTG20GTJEt/CZKiMNVmK0KK0Uwitbvtyb\u002Bf3uB3T77rVbb33fs59P59/3c75nHM/p/et\u002B3md9/vzOYlkMhkBAAAQnlLFvQMAAAAUD0EIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQqMzi3gEA0t6GZPLcv942/atvP/vXo5vf\u002B9mUmU\u002B\u002BNOrTKTOXZC0rX7bs/vs0OP24Nqe1PzKRSGzzmafNmTfguVfGTpi6YtXqWntWa9eqxaWdOtauWT3vNkuzlrc8/bItPrzzycf0uaLL1p58yKtv3/SPJ9q2ajHwtqu3ts2Mr7/tcMn1URT9pctpl3f\u002Bwxa3Oalb72lz5vXv9adTjj4i7\u002B2z5n53Qtdefzr7pKsvOnObrxQAioUZQgB2yYZk8ob//ef4L2Zs8d5Bw0acddWtI9/7eM3atc33aVixQrnxk6f36j/wspvvy8nJKfiZP5ow9bTufUaMHrchmdy/cYPlK1Y9PfyNE7r2\u002BmzKzLybTZw\u002BpwiG8KFnh385e\u002B4OPeTdcROiKGrbqkWh7RQA7CozhADsvEVLs667\u002B7H3Ppm0xXsnz/iq32PPJ5PJa7ueddHpx2dkZKQyqccdD7354WePvvDqZeecsrVnXpq1/KrbH1qfnX1Jpw5XX3hGRkbG2nXrbxvwzPOvvn3lbQ\u002B88/Q9pTN//hU28cvZURSdc9LRfa\u002B8oPDGMjs7p2e/R19\u002B\u002BJZN33eb3hk3oWrlSi2aNym8vQKAXWSGEICdsWbtukHDRpzQtdd7n0wqX7bMFrd57t9vJZPJDm1bX9KpQ6oGUzNm11zcKYqi5199p4Dnf230uMU/LTuo2b49L\u002B6UemzZMqVvvvz8Pfeo8uOipR98NmXTlhOnzYqi6PDfHFCoA1m\u002BXNnpX31z/\u002BCXtnP75StXfTplZpvfHZRRyq9aAOLLbymA9Pbh51O69u7f8vTLDj75kvN63vnJ5Gkffjal6bHnXXf3Y4X6fV95\u002B8O7Hh3y07IVHdsd9uhWzsFbvnLVHlUqtfndQflub31w8yiKvl\u002B4eO269Vt7/mUrVu5dd68Tj2qZ91TDjIyMerVrRlG0eGlW6pZkMjlp2pxEItFq43PuonXrs8/veWfTY887/uLrFv\u002B0LO9dPbvmRuzAF16bNC13QnKbxoyfnJOT067Vwak/Pj38jabHnvfo8//\u002B9oeFPfs90vqM7r/uePFJ3W548fX3oijK2bBh0LARx1983QEnXnh4p8tvvO/xZStW7frLAYBtsmQUII0NGjYitSazTs09G9ap9fnUmeddc\u002Be5Jx\u002BzzQf2uP2h194dW8AGxxx\u002ByIC\u002BVxWwQdkypTu2O\u002BySMzv8qsneM77\u002BdovbPHjTlVu8/fuFS1LPUKb0Vn8NXXbOKZsvKF2weOn0OfOiKDqgaaPULV9/92PWipVVK1W8fcAzn0\u002BdtWDJT1EU7deo/lkd2v3xuDbbc92aTXJycq645f6PJkxtXL/203ffsOceVfLee07H/3nro88\u002B\u002BPSLnn9/7JVHbitbpnTBz/buuAmlEokjD/1FDE\u002BbM\u002B\u002BRIf9et379fo0aLPopa9qcb3r1H7hm7box4ye/9dFn9faq0WTvel/Onvf8a\u002B/MmvvdkHtv3P6dB4CdIwgB0tXkGV/9/bHnoyjqc0WXzhsjcPFPy6645YHB//pPEXz3U44\u002BIt9FNbff4Jdfz13keciB2xlsyWRy0dJl7386\u002BcFnXl67bv3pxx/VbJ\u002BGqbsmTc\u002Bdr8tasfJfb35Qv3bNZvs0mL9g8cRpsydOmz36k0n39e6\u002BnSs2NyST1/R75O2xn\u002B9dd69n\u002Bt9Qs3rVzbe58\u002BquHS65Yc438\u002B95Yuj13c4p\u002BNlGfzyxxa\u002Ba7FGlUt7bX31nbIvmTR6\u002BuUfN6lWTyWTvewcNHTn6lgcHV6xQftAdPVNTqeMmftnl2rvGfzFj0rTZBzXbd3t2HgB2miAESFeDho7YkEyefvxRqRqMomjPPaoMuKXHsRf0XJq1vODH3te7\u002B329u0fF4aX/jHn344mlEonLO5\u002B6nQ\u002B56o6HN81nXnDa8b26nb3prqzlK2vXrF6tSuU7rr74wKaNUze\u002B9u7Y6/sPHPXexw82rPeXLqdtz7e48d7HX31nbIM6tZ7pf0OtPattcZs6Nffs/edze/Uf\u002BOSLo449/LeH/nr/rT3b5OlzlmQtv\u002BCPx\u002Be7PZFI/G\u002BvP6dqM5FIdD3jxKEjR29IJi/vfOqmhbWtDm7eonmTT6fMmDp7niAEoLA5hxAgLSWTydS1PU9r//u8t1etVHGnJ\u002B6KwKj3Pr7hnkFRFF198ZkH7b/Pdj5q3fr1LZo32atGbqcNfvn16/sPXLc\u002BO3XX\u002Bae2H/PcP1555LZNNRhFUYe2ra\u002B9NDcaBw0bsXrN2m0\u002B/x2PPPt/I9\u002BtWX2PZ/rfkO9DDvP543Ft2rZqsSGZvK7/YwU88zsbP3Ci3WYfONG4fp2GdWtt\u002BmPdWjVSXxzx2wPzblZjYzGuXL16m3sOALtIEAKkpazlK5evzL3uSNO96\u002Be766D9/38axcqQV9/ucftDOTk5Xc848dJOHbf/gQ/f3GPo/X3eH3L/wNuvqVyxwstvvH/Lg4MLfsjpx7XJzMxYvWbt51Nzr0FagLETpj7x4qjUJXCys3O2XY9/vbhqpYrz5i/oNzB3ve4WvTtuwl41qm1a17pJ7Zq/mHssnfnzlVerV62c9/bMjVdVTSa3uS8AsKssGQVIS5uuQlmhfLl8d1Wt/Ivz1grpojI7JGfDhrseHfLkS7nddfVFZ/7p7JN27nnatjz4psvPv/quAcNGje55SaeqlSpubctyZcvUrlH92x8Wpi4zU4A1a9fV2rNa/do1Ppsy82/3Dhp89/UFb1\u002Bz\u002Bh6pfXju32\u002B1//2hm3/cxcIlP02dNbfTiW03f2yFcmW38qw7cPEbANiNzBACpKXKFcunvli5Kv/CwjXr1kVxsmr1mj/3ue/Jl0aVLVP63hu673QNprTduA4zZ8OGr7/9IYqi1WvXfffjoi2u3lyfnbustNy2Lgdao1rVZ/rfcPe1fypbpvRHE6YOGzV6m/tw8tGHtz/i0GQyeX3/gSs2\u002B/t/d9zEZDJ5VMv860UBIIbMEAKkpWpVK9eoVnXR0qwvZ887/JBfTFLNmvvdNh9eZBeVWbFqdZfr\u002Bk2aNrtm9aqP9L1q\u002B6\u002BScmGvv0\u002Bd9fXfr\u002B12VMufP8ovn9KZub/Cjjq3x9Ks5bf2uOisDu3y3rtwSdaPi5ZGUbR/4wYFf6MD92vcuH7t1Add3PvksLseHdK2VYsa1bZwldG8bulx4SdfTJ\u002B/YPHtA57Nd9e74yaUKZ15xC8HBQDiyQwhQLo65vBDoih6/rW3896YnZ0z/M0Po3jI2bCh2433TJo2u3H92kPvv3mHrpmZkVFqSdbyoZvN1/3rzfdT187Zr1HuyZOpz6Mf/tYHyV\u002Becvf4iyOjKGq2T8PGDeps53e8pFOHfRvWzVqxcpsnKKYu6Nr3yguiKBo2avTX3\u002BXOVaasz85\u002B/7MvWh7UvPxWV4cCQIwIQoB0dWmnjhXKlxv53scPPP1yzoYNqfWTvfoPnPPN/CgeHnvh1Y8nTataudLjd15bb6\u002Bfr6i5nS4\u002B48Qoil4f88mAIa\u002BkXl0ymRzy6tv9HhsSRVH3zqdmbrwiS9czTkwkEuMnT7/rsSGpNaIbksmnXn798aEjEolEwZ8WmE/pzMxb/nJhFEUj3/v47bGfb3P7E9q07NC2deosxE03fjJp\u002BqrVaza/vigAxJMlowDpqkGdWvfdcNkVtz5w/\u002BCXnn3lzYZ1a82aO3/5ylX7Nao/4\u002Btvi3vvcut04Auvbbwg6op25/11i9t8POzhahsvsHlSt97T5szrfPIxfa7okrrrsBa/uu6Ss/7\u002BzxfueXzoEy\u002BOalC75tz5C7KWr8j9qIk/tL/wvx/xd3CzfW\u002B6/PxbHxz8\u002BLCRw0aNblS/zvwfFy1ampVRqlSfy8/Pt5h2m1oe1Oy09ke\u002B9J8xfe5/suVBzSpV\u002BPlEza25\u002BYou4yZ\u002BuWhpVr4PnEid6AgA8WeGECCNtWv9m\u002BEDbuvYrvWGZHLqrLn7Nqz76K1/TU1bFbsvZ81NfTDGTut6Zofn7vlb\u002ByMOTUTRlFlzMzNKHXP4IU/163XjZefl3azzycc8f99Nxx35u9KZmVNnfZ1IJDq0bT30gZvPOenonfimvS49e48qlX5YuOTuf76wzY33qFLptqsuynvLu\u002BMmNK5fO\u002B\u002BHDQJAnCXynXQBQLp7\u002BNnh9z457LT2R/breWlx7wsAEGtmCAEAAAIlCAEAAAIlCAEAAAIlCAEAAALlojIAAACBMkMIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQKEEIAAAQqMzi3oFQ/KHPE8W9CwAAUHK83PfC4t6FksAMYVFQgwAAQAwJQgAAgEBZMlqkSsy89qY5T68otoxR/Bmj\u002BDNG8WeM4s8YxV/JGyN2iBlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQAlCAACAQCWSyWRx70OJ8oc\u002BT\u002BzoQ17ue2EUY16RMfJT59\u002BR/xm2yP/eRczvIz91Rc9PXfx/6th1ZggBAAACJQh3sx19EyX\u002Bb7p4RcbIT51/R/5n2PW/Af\u002BO/Dvy78i/ozgoecd17DpBCAAAEChBuPtt/1sp6fKmi1cUf8Yo/oxR/Bmj\u002BDNG8WeM4q/kjRG7SBACAAAEShAWiu15QyW93nTxiuLPGMWfMYo/YxR/xij\u002BjFH8lbwxYlcIQgAAgEAJwsJS8Nsq6fimi1cUf8Yo/oxR/Bmj\u002BDNG8WeM4q/kjRE7TRACAAAEShAWoq29uZK\u002Bb7p4RfFnjOLPGMWfMYo/YxR/xij\u002BSt4YsXMEIQAAQKAEYeHa/C2WdH/TxSuKP2MUf8Yo/oxR/Bmj\u002BDNG8VfyxoidIAgBAAACJQgLXd43WkrGmy5eUfwZo/gzRvFnjOLPGMWfMYq/kjdG7ChBCAAAEKokReLUmx4vYX/TXlH8GaP4M0bxZ4zizxjFnzGKv5I3Rmw/M4QAAACBSiSTyeLeBwAAAIqBGUIAAIBACUIAAIBACUIAAIBACUIAAIBACUIAAIBACUIAAIBACUIAAIBACUIAAIBACUIAAIBACUIAAIBACUIAAIBAZRb3DqSTpseeV9y7AAAAbNvMN57217Q9zBACAAAEShACAAAEShACAAAEShACAAAEShACAAAEShACAAAEShACAAAEShACAAAEShACAAAEKpFMJot7H9JD02PPS30x842ni3tfAACALXPcvkPMEAIAAARKEO7Y2wz5vgYAAOLDcfuOEoTbtnkBakIAAIgbx\u002B07QRACAAAEShDuwNsMeS8nY5IQAADiw3H7zhGEBSm4\u002BjQhAADEgeP2nSYIt1dqetBnTgAAQJw5bt8hgnCHJ50tHAUAgPhw3L4rBOGuLge1cBQAAIqL4/ZdJAi3bfNlohaOAgBA3Dhu3wmCcAcmnfOycBQAAIqX4/ZdJwh3zxJQC0cBAKAoOW7fLQRhQT9VBS8NzXevJgQAgKLhuH13EYRbtT0nCjqZEAAAipfj9l0hCHdsCfLmnEwIAABFyXH7biQId/OCTwtHAQCg8Dhu370E4W5YCGrhKAAAFD3H7btOEO78pHNeFo4CAEBhc9y\u002B2wnCQlnkaeEoAADE/xi7aSE8Z3oRhLtt8aeFowAAUDQct\u002B8uoQfhrk8652XhKAAAFAbH7YUk6CAs7AliE9AAABD/4\u002BqmAS8cDToIC2PBp4WjAABQeBy3717hBuHunXTOy8JRAADYXRy3F6pAg7AoJ4VDnoAGAIBd4bi9sAUahIW9yNPCUQAAiP8x9sxCeM70EmIQFt6kc14WjgIAwK5w3F4EggvC4lrAaeEoAADE//i5aWAnfAUXhEU5QWwCGgAA4n9cPTPghaNhBWHRTDrnZeEoAADsKMftRSagIIzD5G8c9gEAAOIsDsfMTWOwD0UjoCAsrknhkCegAQBgVzhuL2yhBGHRTzrnZeEoAABsD8ftRSyIIIzbhG/c9gcAAOIgbsfJTWO2P4Wh5AdhvlEsrgWc\u002Bb5vCD9bAACw/Ry3F4uSH4TxOZ3PyYQAABD/I\u002BeZIV0EpIQHYfEuQd6ckwkBAGBzjtuLS0kOwvgvy4z/HgIAQGGL/1Fx09jv4U4ryUGYVxymB\u002BO2JwAAEDfxOVqeGZs9KVQlNgjjNumcl4WjAACQ4ri9eJXMIEyvKd302lsAAAjzSLhpWu1t0EGYV9ymB\u002BO8VwAAUFzieYQ8M5Z7tRslkslkVLKkabiX\u002BB81AADIy3F7HJS0GcI0/alK6z0HAIBwjn6bpu2eBxGEAAAAhBiE6R7r6b7/AAAQwnFv0zTf/xJ\u002BDiEAAADBzRACAACw/QQhAABAoAQhAABAoAQhAABAoAQhAABAoAQhAABAoAQhAABAoAQhAABAoAQhAABAoAQhAABAoDKjdND02POKexfiZeYbTxf3LgAAQH6O29PuuN0MIQAAQKAEIQAAQKASyWSyuPcBAACAYmCGEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCCEAAAIFCZxb0D6aRbr37FvQsAAMC2PXrXdf6atocZQgAAgEAlkslkce8DAAAAxcAMIQAAQKAEIQAAQKAEIQAAQKAEIQAAQKAEIQAAQKAEIQAAQKAEIQAAQKAEIQAAQKAEIQAAQKAEIQAAQKAEIQAAQKAEIQAAQKAEIQAAQKAyi3sHAEgz47\u002BYcfZVt0ZR9MVrj5ctU7rodyA7O\u002Be5V98a/taHs\u002Bd9l52d07BurY5tD7vo9BPKlS1T8AOXZi1vefplW7yr88nH9Lmiy6Y//rRsxSND/v3OuAnf/biwSqUKh/3mgO7nnrJPg7q7\u002B6UAQDEThACkkxWrVne9of\u002BnU2ZklCrVtFH9tevXz547/94nh/3ng/FD7vlb\u002BXJlC3jsxOlztudb/LBwSacet8xfsLhKpQrN99173vwfX3nrw/\u002B8P37QHT1bHtRs970UACh\u002BghCAdNL3gac\u002BnTKjcf3aj97y18YN6kRR9OXsud1uvHfKzK8ffm741RedWcBjJ345O4qic046uu\u002BVFxSw2VV3Pjx/weIObVvfec0l5cuWycnJufuf/zdo2Igetz/45pP9K5QvVwgvCwCKh3MIAUgb07/65l9vflCubJkn7rouVYNRFDXfd\u002B9rL\u002BlUvmyZT7\u002BYWfDDJ06bFUXR4b85oIBtPp40bfzk6dWrVr7z6q7lN65BzcjI6NXt7N/9utnCJVlDR43erS8IAIqZGUIA0sbwtz5ITfHV26tG3ts7tjusY7vDCn5sMpmcNG1OIpFodXDzAjYbMXpcFEXtf39ovtWnp7X//SeTp40YPa7LH47b2mOfHv7GLQ8OvubiMzu0bf2Pp14cM37yytVrGtXb64LTjv/jcW1yNmx48qVRQ0eO/ub7BVUrVzz6sEN6dj2rSqUK2/3qAWD3E4QAFJ0etz/02rtjC9jgmMMPGdD3qq3d\u002B\u002BkXM6IoatuqxU5866\u002B/\u002BzFrxcqqlSrePuCZz6fOWrDkpyiK9mtU/6wO7f54XJtEIpHa7IsZX0VRdHCzffM9/OBmTaIomjz9q5ycnIyMjAK\u002B0bQ58x4Z8u9169fv16jBop\u002Byps35plf/gWvWrhszfvJbH31Wb68aTfau9\u002BXsec\u002B/9s6sud8NuffGnXgtALC7CEIA0saMr76NomjfBnU\u002BnTJj4AuvfTplxuo1a/dtWPeME9qe3fF/MkoVdB7EpOm5JxBmrVj5rzc/qF\u002B7ZrN9GsxfsHjitNkTp80e/cmk\u002B3p3Tz38ux8XRVFUr3bNfA\u002BvW2vPKIrWZ2cvWPJTnZq5X2/Nq\u002B\u002BMbdG8ycM396hZvWoymex976ChI0ff8uDgihXKD7qjZ5vfHRRF0biJX3a59q7xX8yYNG32QZvFJwAUGUEIQNG5r3f3\u002B3p337nHrs/OXrFqdRRFo9775PYBz5QunblPg7pLspZNnTW37wNPjflk0sM3/6WAubus5Str16xerUrlO66\u002B\u002BMCmjVM3vvbu2Ov7Dxz13scPNqz3ly6npTaLoqhShfL5Hl6h/M8rSJetWFVwECYSif/t9eea1aumvu56xolDR47ekExe3vnUVA1GUdTq4OYtmjf5dMqMqbPnCUIAipEgBCA9rFq9JvXFHY8826HdYX2v7FK5Yu4JeO\u002BM/fyafo\u002B8Pfbzh54dfuX5uVG3Reef2v78U9vnu7FD29ZLl63o\u002B8BTg4aNuLRTh/Llyubk5ERRVDoz/\u002B/HRCKRmZmRnZ2TnZ27QQEa16/TsG6tTX\u002BsW\u002Bvn0x2P\u002BO2BeTersbEYV67OTVwAKC6uMgpAmvjvaX7779Pg7msvTdVgFEXtWv/mukvPjqLoqZdfT\u002BXcDjn9uDaZmRmr16z9fGruNUjLbryy6Prs7HybJZPJVAqWLr2N91Jr16yW94\u002BlM3\u002BetKxetXLe2zM3TmYmkzu6vwCwO5khBCA9LipT6b8fANihbet8S0M7HNW69z2Dlq1YNfub7/drVH\u002BHdqlc2TK1a1T/9oeFqcvMVKpQfvWatZtmIzdZ\u002Bd9bqlaqWPATVvjl5Unz\u002BDloASA\u002BzBACkB4yMjJq16weRdFeNX4xBRdFUcUK5SpWyM3FzUNuk9Vr133346LVa9ZufldqPrBcmdJRFO1db69Nl5bJa/6CxVEUlSmdmVrqCQAlgxlCANLjojJRFB3QpNEPC5fM\u002Beb7fLdnLV\u002BxclVuCtaukVuMW3TUuT2WZi2/tcdFZ3Vol/f2hUuyfly0NHclauMGqW8xfvL0L2Z8dVr7I/NuNvHL3IuU/qpJo4KvZQoA6cVvNQDSxglHtYyi6OX/vJ9vou/F18dEUdS0Ub3UFOIWpT6PfvhbHyR/ed7e4y\u002BOjKKo2T4NGzeoE0XRcUcemnsh0zEfr167Lu9mL72R\u002By1OPKpVIbwsACg2ghCAtHHiUa2aNqr3/cLF3fv\u002BY9HSrNSNY8ZP/sfgl6Io6nbWSQU8tusZJyYSifGTp9/12JDUGtENyeRTL7/\u002B\u002BNARiUTi\u002Bm7npDY79MD9f/OrJguXZF11\u002B0OpT7nIycnp99iQ8ZOn77lHlbM6/k\u002BRvFAAKCKWjAKwkw7scNEWb7/ivD8U8PEPu6J0ZubDN/e44Lp\u002BY8ZPbnNOj/0bN1i5Zs1XG1eQnnvyMaccfcSmLU/q1nvanHmdTz6mzxVdUrcc3Gzfmy4//9YHBz8\u002BbOSwUaMb1a8z/8dFi5ZmZZQq1efy8w8/5IDUZolEol/Pbuf89ba3Pvrs92df2XTv\u002Bt98v2DxT8vKly0zoO9V5TdegxQASgxBCEA6aVSv9quP3fHPoSNeH/PJzLnflitbtnWLX5170tHHt8ldTVqwzicfc0CTRoOGjRg/efrUWV9Xq1K5Q9vWF59x4q/3\u002B/lz6lMa1689fMCtDz07/J2xE6bM/LrWnnuccvQR3Tuf2rh\u002B7cJ8ZQBQDBL5TqUAAAAgEM4hBAAACJQgBAAACJQgBAAACJQgBAAACJQgBAAACJQgBAAACJQgBAAACJQgBAAACJQgBAAACJQgBAAACJQgBAAACJQgBAAACJQgBAAACJQgBAAACJQgBAAACJQgBAAACJQgBAAACJQgBAAACJQgBAAAiML0/wCufw7vM\u002BmBfQAAAABJRU5ErkJggg==",
+                "Format": "png",
+                "WidthMm": 35,
+                "HeightMm": null,
+                "Alt": "Schema di una trave appoggiata con carico distribuito",
+                "Caption": null,
+                "Alignment": "center"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          }
+        ]
+      ],
+      "WidthsMm": [
+        40,
+        65,
+        50
+      ],
+      "Header": true,
+      "HeaderFill": "24445C",
+      "StripeFill": "EEF3F6",
+      "BorderColor": "CBD5DD",
+      "PaddingMm": 2,
+      "StyleId": null
+    }
+  ],
+  "SourceBase64": null,
+  "Styles": [],
+  "Layout": null,
+  "Properties": null,
+  "Replacements": null,
+  "Targets": [],
+  "StrictPlaceholders": true
+}

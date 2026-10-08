@@ -1,0 +1,47 @@
+{
+  "Blocks": [
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Annotazioni",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Title",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "note",
+      "Text": "Nota a pi\u00E8 di pagina dimostrativa.",
+      "Anchor": "Dato con approfondimento",
+      "Endnote": false
+    },
+    {
+      "kind": "note",
+      "Text": "Nota finale dimostrativa.",
+      "Anchor": "Metodo di riferimento",
+      "Endnote": true
+    },
+    {
+      "kind": "comment",
+      "Anchor": "Testo da verificare",
+      "Text": "Confermare questo dato prima della consegna.",
+      "Author": "Revisore"
+    }
+  ],
+  "SourceBase64": null,
+  "Styles": [],
+  "Layout": null,
+  "Properties": null,
+  "Replacements": null,
+  "Targets": [],
+  "StrictPlaceholders": true
+}

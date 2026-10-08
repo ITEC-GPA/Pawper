@@ -1,0 +1,50 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E8094A8C-C87B-4E40-BD33-EA423BE6B95B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pawper.Core", "src\Pawper.Core\Pawper.Core.csproj", "{DB0A938C-384C-4640-9844-5D67161E64FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pawper.Grasshopper", "src\Pawper.Grasshopper\Pawper.Grasshopper.csproj", "{252BCBA1-9B8E-411B-AC17-78893C55C948}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{A60CE4D8-2E25-45F9-8584-C8039A36A59A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pawper.Verify", "tools\Pawper.Verify\Pawper.Verify.csproj", "{B7772436-1849-4C0C-96F0-20207B2083A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pawper.Definitions", "tools\Pawper.Definitions\Pawper.Definitions.csproj", "{42AA9528-2DA2-423C-AEB8-D7F5A7557FCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB0A938C-384C-4640-9844-5D67161E64FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB0A938C-384C-4640-9844-5D67161E64FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB0A938C-384C-4640-9844-5D67161E64FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB0A938C-384C-4640-9844-5D67161E64FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{252BCBA1-9B8E-411B-AC17-78893C55C948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{252BCBA1-9B8E-411B-AC17-78893C55C948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{252BCBA1-9B8E-411B-AC17-78893C55C948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{252BCBA1-9B8E-411B-AC17-78893C55C948}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7772436-1849-4C0C-96F0-20207B2083A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7772436-1849-4C0C-96F0-20207B2083A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7772436-1849-4C0C-96F0-20207B2083A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7772436-1849-4C0C-96F0-20207B2083A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42AA9528-2DA2-423C-AEB8-D7F5A7557FCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42AA9528-2DA2-423C-AEB8-D7F5A7557FCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42AA9528-2DA2-423C-AEB8-D7F5A7557FCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42AA9528-2DA2-423C-AEB8-D7F5A7557FCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DB0A938C-384C-4640-9844-5D67161E64FB} = {E8094A8C-C87B-4E40-BD33-EA423BE6B95B}
+		{252BCBA1-9B8E-411B-AC17-78893C55C948} = {E8094A8C-C87B-4E40-BD33-EA423BE6B95B}
+		{B7772436-1849-4C0C-96F0-20207B2083A4} = {A60CE4D8-2E25-45F9-8584-C8039A36A59A}
+		{42AA9528-2DA2-423C-AEB8-D7F5A7557FCC} = {A60CE4D8-2E25-45F9-8584-C8039A36A59A}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,7 @@
+**/bin/
+**/obj/
+/.pawper-build-*/
+/dist/
+.vs/
+qa/
+*.user

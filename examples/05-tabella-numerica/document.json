@@ -1,0 +1,1422 @@
+{
+  "Blocks": [
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Tabelle intere da dati e testo",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Title",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Quattro modi per trasformare dati tabellari in tabelle Word modificabili. I valori mancanti restano vuoti e i codici mantengono gli zeri iniziali.",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Dati organizzati per righe",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Heading1",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "table",
+      "Rows": [
+        [
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Elemento",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Valore",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Unit\u00E0",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          }
+        ],
+        [
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Luce",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "6,50",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "right"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "m",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          }
+        ],
+        [
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Carico",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "12,35",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "right"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "kN/m",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          }
+        ],
+        [
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Dato mancante",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          }
+        ]
+      ],
+      "WidthsMm": [
+        70,
+        45,
+        40
+      ],
+      "Header": true,
+      "HeaderFill": "24445C",
+      "StripeFill": "EEF3F6",
+      "BorderColor": "CBD5DD",
+      "PaddingMm": 2,
+      "StyleId": null
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Dati organizzati per colonne",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Heading1",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "table",
+      "Rows": [
+        [
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Elemento",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Forza",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Lunghezza",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          }
+        ],
+        [
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Trave A",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "1,234.57 kN",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "right"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "4.123 m",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "right"
+          }
+        ],
+        [
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Trave B",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "28.90 kN",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "right"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "3.800 m",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "right"
+          }
+        ],
+        [
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Mancante",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          }
+        ]
+      ],
+      "WidthsMm": [
+        70,
+        45,
+        40
+      ],
+      "Header": true,
+      "HeaderFill": "24445C",
+      "StripeFill": "EEF3F6",
+      "BorderColor": "CBD5DD",
+      "PaddingMm": 2,
+      "StyleId": null
+    },
+    {
+      "kind": "break"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Testo copiato da Excel",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Heading1",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "table",
+      "Rows": [
+        [
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Codice",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Descrizione",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Valore",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          }
+        ],
+        [
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "001",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Prima riga\nseconda riga",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "12,50",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          }
+        ],
+        [
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "002",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Testo con \u0022virgolette\u0022",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          }
+        ],
+        [
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "003",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Dato mancante",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          }
+        ]
+      ],
+      "WidthsMm": [
+        25,
+        90,
+        40
+      ],
+      "Header": true,
+      "HeaderFill": "24445C",
+      "StripeFill": "EEF3F6",
+      "BorderColor": "CBD5DD",
+      "PaddingMm": 2,
+      "StyleId": null
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "CSV senza intestazione",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Heading1",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "table",
+      "Rows": [
+        [
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "A",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Testo; con separatore",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "12,50",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          }
+        ],
+        [
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "B",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Virgolette \u0022OK\u0022",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          }
+        ],
+        [
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "C",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "Fine",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          },
+          {
+            "Content": [
+              {
+                "kind": "paragraph",
+                "Runs": [
+                  {
+                    "Text": "0",
+                    "Format": null,
+                    "Link": null,
+                    "Math": null,
+                    "Field": null,
+                    "StyleId": null
+                  }
+                ],
+                "StyleId": "Normal",
+                "Format": null,
+                "ListLevel": null,
+                "Bullet": false,
+                "ListKey": "default"
+              }
+            ],
+            "ColumnSpan": 1,
+            "RowSpan": 1,
+            "Fill": null,
+            "Alignment": "left"
+          }
+        ]
+      ],
+      "WidthsMm": [
+        25,
+        90,
+        40
+      ],
+      "Header": false,
+      "HeaderFill": "24445C",
+      "StripeFill": "EEF3F6",
+      "BorderColor": "CBD5DD",
+      "PaddingMm": 2,
+      "StyleId": null
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Italiano: 1.234,57 kN",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "English: 1,234.567 kN",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    }
+  ],
+  "SourceBase64": null,
+  "Styles": [],
+  "Layout": null,
+  "Properties": null,
+  "Replacements": null,
+  "Targets": [],
+  "StrictPlaceholders": true
+}
