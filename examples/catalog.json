@@ -10,17 +10,24 @@
       "SaveComponent",
       "OpenResultComponent",
       "InspectorComponent",
-      "RelativePathComponent"
+      "RelativePathComponent",
+      "QuickDocumentComponent",
+      "TextBlocksComponent",
+      "quick-document-empty-source",
+      "editor-text-persistence"
     ]
   },
   {
     "Id": 2,
     "Slug": "testo-formattato",
     "Title": "Testo formattato",
-    "Purpose": "Combinare frammenti con propriet\u00E0 tipografiche diverse.",
+    "Purpose": "Combinare frammenti con proprietà tipografiche diverse.",
     "Features": [
       "TextRunComponent",
-      "ParagraphComponent"
+      "ParagraphComponent",
+      "TextBlocksComponent",
+      "text-blocks-heading-paragraph-bold-italic-escape",
+      "text-blocks-line-list-input"
     ]
   },
   {
@@ -32,7 +39,13 @@
       "StyleComponent",
       "HeadingComponent",
       "style-character",
-      "style-table"
+      "style-table",
+      "QuickDocumentComponent",
+      "ParagraphFormatComponent",
+      "TableFormatComponent",
+      "quick-document-styles",
+      "paragraph-format-style",
+      "table-format-style-id"
     ]
   },
   {
@@ -41,7 +54,9 @@
     "Title": "Elenchi multilivello",
     "Purpose": "Numerare voci, annidare livelli, usare punti e riavviare un elenco.",
     "Features": [
-      "ListComponent"
+      "ListComponent",
+      "TextBlocksComponent",
+      "text-blocks-bullet-number-nested-restart"
     ]
   },
   {
@@ -62,7 +77,8 @@
       "text-table-tsv-auto",
       "text-table-csv-explicit-no-header",
       "text-table-quoted-multiline",
-      "text-table-leading-zeros"
+      "text-table-leading-zeros",
+      "text-table-editor"
     ]
   },
   {
@@ -75,7 +91,11 @@
       "table-rowspan",
       "table-colspan",
       "conditional-fill",
-      "rich-cells"
+      "rich-cells",
+      "TableFormatComponent",
+      "table-format-colors-padding-copy",
+      "table-header-contrast",
+      "table-format-preserve-merged-rich-cells"
     ]
   },
   {
@@ -103,7 +123,9 @@
       "equation-fraction",
       "equation-root",
       "equation-scripts",
-      "equation-greek"
+      "equation-greek",
+      "TextBlocksComponent",
+      "text-blocks-inline-display-multiline-math"
     ]
   },
   {
@@ -129,7 +151,13 @@
       "SectionComponent",
       "BreakComponent",
       "layout-first-even",
-      "page-fields"
+      "page-fields",
+      "TextBlocksComponent",
+      "text-blocks-page-break",
+      "PagePresetComponent",
+      "page-preset-A4-A3-Letter-Legal",
+      "page-preset-portrait-landscape",
+      "page-preset-header-footer-fields"
     ]
   },
   {
@@ -161,7 +189,7 @@
     "Id": 13,
     "Slug": "metadati",
     "Title": "Metadati",
-    "Purpose": "Impostare propriet\u00E0 standard e personalizzate e ispezionare il documento.",
+    "Purpose": "Impostare proprietà standard e personalizzate e ispezionare il documento.",
     "Features": [
       "MetadataComponent",
       "metadata-custom"
@@ -171,14 +199,20 @@
     "Id": 14,
     "Slug": "template-testuale",
     "Title": "Template con placeholder",
-    "Purpose": "Sostituire token divisi tra run nel corpo, nelle intestazioni e nei pi\u00E8 di pagina.",
+    "Purpose": "Sostituire token divisi tra run nel corpo, nelle intestazioni e nei piè di pagina.",
     "Features": [
       "FillTemplateComponent",
       "template-docx",
       "placeholder-split",
       "placeholder-repeated",
       "template-style",
-      "template-header-footer"
+      "template-header-footer",
+      "QuickDocumentComponent",
+      "FillFieldsComponent",
+      "quick-document-template",
+      "fill-fields-parallel-lists",
+      "fill-fields-strict-lenient",
+      "fill-template-json-alternative-manual"
     ]
   },
   {
@@ -208,7 +242,7 @@
     "Id": 17,
     "Slug": "note-e-commenti",
     "Title": "Note e commenti",
-    "Purpose": "Note a pi\u00E8 di pagina, note finali e commenti modificabili.",
+    "Purpose": "Note a piè di pagina, note finali e commenti modificabili.",
     "Features": [
       "NoteComponent",
       "CommentComponent",
@@ -247,7 +281,10 @@
     "Title": "Relazione tecnica completa",
     "Purpose": "Combinare copertina, sommario, dati, immagini, equazioni, note e sezioni.",
     "Features": [
-      "integrated-report"
+      "integrated-report",
+      "PagePresetComponent",
+      "ParagraphFormatComponent",
+      "paragraph-format-direct"
     ]
   }
 ]

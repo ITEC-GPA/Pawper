@@ -45,6 +45,8 @@ public sealed class DefinitionBuilder
                 p.PersistentData.Clear();
                 p.PersistentData.Append(new GH_Integer(Convert.ToInt32(value)));
                 break;
+            case Param_Colour p:
+                p.PersistentData.Clear(); p.PersistentData.Append(new GH_Colour((Color)value!)); break;
             case Param_Number p:
                 p.PersistentData.Clear();
                 p.PersistentData.Append(new GH_Number(Convert.ToDouble(value)));
@@ -60,8 +62,13 @@ public sealed class DefinitionBuilder
         Set(c, 0, relative);
         return c;
     }
-    LayoutComponent Layout(PageLayout p)
+    GH_Component Layout(PageLayout p)
     {
+        if (id == 20)
+        {
+            var preset = Add(new PagePresetComponent(), 2);
+            Set(preset, 0, "A4"); Set(preset, 1, p.Landscape); Set(preset, 2, p.MarginMm); Set(preset, 3, p.Header); Set(preset, 4, p.Footer); return preset;
+        }
         var c = Add(new LayoutComponent(), 2);
         Set(c, 6, Json.Write(p));
         return c;
@@ -149,8 +156,8 @@ public sealed class DefinitionBuilder
                 }
                 var para = Add(new ParagraphComponent());
                 Set(para, 2, p.StyleId);
-                if (p.Format != null)
-                    Set(para, 3, Json.Write(p.Format));
+                if (p.Format != null) Set(para, 3, Json.Write(p.Format));
+                else if (id == 20) Link(ParagraphSettings(new()), para, 3);
                 if (p.Runs.Length == 1 && p.Runs[0].Format == null && p.Runs[0].Link == null && p.Runs[0].Math == null && p.Runs[0].Field == null && p.Runs[0].StyleId == null)
                     Set(para, 0, p.Runs[0].Text);
                 else
@@ -198,6 +205,12 @@ public sealed class DefinitionBuilder
                         widths.PersistentData.Append(new GH_Number(width));
                 Set(table, 2, t.Header);
                 Set(table, 3, Json.Write(new TableOptions(t.HeaderFill, t.StripeFill, t.BorderColor, t.PaddingMm, t.StyleId)));
+                if (id is 3 or 6)
+                {
+                    var format = Add(new TableFormatComponent(), 4); Link(table, format, 0);
+                    Set(format, 1, ColorTranslator.FromHtml("#" + t.HeaderFill)); Set(format, 2, ColorTranslator.FromHtml("#" + t.StripeFill)); Set(format, 3, ColorTranslator.FromHtml("#" + t.BorderColor)); Set(format, 4, t.PaddingMm); Set(format, 5, t.StyleId ?? "");
+                    return format;
+                }
                 return table;
             case ImageBlock i:
                 var image = Add(new ImageComponent());
@@ -264,14 +277,37 @@ public sealed class DefinitionBuilder
                 throw new NotSupportedException(block.GetType().Name);
         }
     }
+    ParagraphFormatComponent ParagraphSettings(ParagraphFormat format)
+    {
+        var c = Add(new ParagraphFormatComponent(), 2);
+        Set(c, 0, format.Alignment); Set(c, 1, format.Before); Set(c, 2, format.After); Set(c, 3, format.Line); Set(c, 4, format.KeepNext); return c;
+    }
     GH_Component BuildDocument(Document spec)
     {
-        var create = Add(new NewDocumentComponent(), 4);
-        if (spec.SourceBase64 != null)
+        if (id == 1)
+        {
+            var text = Add(new TextBlocksComponent(), 1);
+            Set(text, 0, ((Paragraph)spec.Blocks[1]).Runs[0].Text);
+            var quick = Add(new QuickDocumentComponent(), 5); Set(quick, 0, "Primo documento"); Link(text, quick, 1); return quick;
+        }
+        if (id == 14)
+        {
+            var quick = Add(new QuickDocumentComponent(), 5); Link(PathNode("../assets/template.docx"), quick, 3);
+            foreach (var b in spec.Blocks) Link(BuildBlock(b), quick, 1);
+            var fill = Add(new FillFieldsComponent(), 6); Link(quick, fill, 0);
+            foreach (var pair in spec.Replacements!)
+            {
+                ((Param_String)fill.Params.Input[1]).PersistentData.Append(new GH_String("{{" + pair.Key + "}}"));
+                ((Param_String)fill.Params.Input[2]).PersistentData.Append(new GH_String(pair.Value));
+            }
+            return fill;
+        }
+        var create = id == 3 ? null : Add(new NewDocumentComponent(), 4);
+        if (spec.SourceBase64 != null && create != null)
             Link(PathNode(id == 15 ? "../assets/template.dotx" : "../assets/template.docx"), create, 0);
-        var compose = Add(new ComposeComponent(), 5);
+        GH_Component compose = id == 3 ? Add(new QuickDocumentComponent(), 5) : Add(new ComposeComponent(), 5);
         compose.Params.Input[1].DataMapping = GH_DataMapping.Flatten;
-        Link(create, compose, 0);
+        if (create != null) Link(create, compose, 0);
         if (id == 16)
         {
             Link(BuildBlock(Paragraph.Text("Schede degli elementi", "Title")), compose, 1);
@@ -290,8 +326,18 @@ public sealed class DefinitionBuilder
             Link(falseCase, compose, 1);
         }
         else
-            foreach (var block in spec.Blocks)
-                Link(BuildBlock(block), compose, 1);
+        {
+            string input = InputSamples.TextFor(id);
+            int tail = input.Length == 0 ? 0 : StructuredText.Parse(input).Length;
+            foreach (var block in spec.Blocks.Take(spec.Blocks.Length - tail)) Link(BuildBlock(block), compose, 1);
+            if (tail > 0)
+            {
+                var text = Add(new TextBlocksComponent(), 2);
+                var param = (Param_String)text.Params.Input[0]; param.PersistentData.Clear();
+                foreach (var line in input.Split('\n')) param.PersistentData.Append(new GH_String(line));
+                Link(text, compose, 1);
+            }
+        }
         if (!spec.Styles.IsDefault)
             foreach (var style in spec.Styles)
             {
@@ -300,12 +346,13 @@ public sealed class DefinitionBuilder
                 Set(s, 1, style.Name);
                 Set(s, 2, style.BasedOn);
                 Set(s, 3, Json.Write(style.Run ?? new()));
-                Set(s, 4, Json.Write(style.Paragraph ?? new()));
+                if (id == 3) Link(ParagraphSettings(style.Paragraph ?? new()), s, 4);
+                else Set(s, 4, Json.Write(style.Paragraph ?? new()));
                 Set(s, 5, style.Type);
-                Link(s, compose, 2);
+                Link(s, compose, id == 3 ? 4 : 2);
             }
         if (spec.Layout != null)
-            Link(Layout(spec.Layout), compose, 3);
+            Link(Layout(spec.Layout), compose, id == 3 ? 2 : 3);
         GH_Component current = compose;
         if (spec.Replacements != null || !spec.Targets.IsDefaultOrEmpty)
         {
@@ -341,6 +388,23 @@ public sealed class DefinitionBuilder
     }
     void Extras(GH_Component doc)
     {
+        if (id is 1 or 2 or 4 or 8 or 10)
+            instructions.Add("Text Blocks: doppio clic sul corpo o menu Modifica testo per l'editor; in alternativa collegare un Panel multilinea o una lista di righe. Un ramo produce una lista ordinata, rami distinti restano distinti. Righe vuote separano paragrafi; #..######### crea titoli, **grassetto**, *corsivo*, ***entrambi***. Gli elenchi -/+ e 1. usano due spazi per livello. $formula$ è inline, $$formula$$ separata; --- crea una pagina nuova. Usare testo.txt dove incluso. Editor disabilitato se Text è collegato o contiene più rami; Annulla non modifica l'input. Sintassi non chiusa produce un errore con numero di riga.");
+        if (id == 1) instructions.Add("Percorso minimo: Text Blocks.Blocks → Quick Document.Blocks → Save Word.Document. Impostare Title in Quick Document. Layout, Styles e Template path sono opzionali; non occorrono New Document, Heading e Compose.");
+        if (id is 3 or 20) instructions.Add("Paragraph Format: scegliere l'allineamento dal menu o dall'input; Before/After sono punti, Line è un multiplo. Collegare Format a Paragraph.Format oppure Word Style.Paragraph format. Keep next mantiene il paragrafo col successivo. Per rientri e opzioni aggiuntive resta disponibile il formato avanzato.");
+        if (id is 3 or 6) instructions.Add("Table Format: collegare una tabella a Table e tre Colour Swatch opachi a Header, Stripe e Border. Padding è in mm. Style ID vuoto mantiene lo stile precedente. L'output è una copia: un secondo ramo resta invariato. Nell'esempio 06 l'intestazione chiara usa testo nero; gli altri esempi mostrano intestazioni scure con testo bianco. Celle unite e contenuti complessi sono conservati.");
+        if (id == 5) instructions.Add("Text Table offre lo stesso editor multilinea di Text Blocks: doppio clic, incolla il testo TSV/CSV e Applica. Annulla conserva i dati. Se Text è collegato, modificare il Panel sorgente.");
+        if (id == 10)
+        {
+            foreach (string format in new[] { "A4", "A3", "Letter", "Legal" })
+            {
+                var preset = Add(new PagePresetComponent(), 2); Set(preset, 0, format); Set(preset, 1, format == "A3"); Set(preset, 3, "Pagina " + format); Set(preset, 4, "Pagina {{PAGE}} di {{NUMPAGES}}");
+                var quick = Add(new QuickDocumentComponent(), 5); Set(quick, 0, "Prova " + format); Link(preset, quick, 2);
+            }
+            instructions.Add("I quattro Page Preset dimostrano A4, A3 orizzontale, Letter e Legal, con un Quick Document ciascuno. Per provare un formato collegare quel Quick Document a Save Word al posto del documento principale. I menu Format e Landscape controllano dimensioni e orientamento; margini troppo grandi sono rifiutati. I campi PAGE/NUMPAGES vanno aggiornati in Word.");
+        }
+        if (id == 14) instructions.Add("Alternativa avanzata da ricostruire: aggiungere Fill Template; collegare Quick Document.Document a Fill Template.Document; impostare Values JSON a {\"Progetto\":\"Edificio dimostrativo\",\"Cliente\":\"Cliente esempio\"}, Targets vuoto e Strict=True. Collegare Fill Template.Document a Inspector e Save Word al posto di Fill Fields.Document. Il risultato atteso è identico. Questa variante manuale mostra il precedente input JSON; la definizione inclusa usa le liste semplificate.");
+        if (id == 14) instructions.Add("Quick Document apre la copia di template.docx e aggiunge il paragrafo ProjectBody; Title vuoto evita titoli duplicati. Fill Fields.Names e Values sono due liste parallele: Progetto → Edificio dimostrativo, Cliente → Cliente esempio. Names accetta anche {{Progetto}}. Lunghezze diverse e nomi duplicati sono errori. Strict=True segnala token mancanti/nome inutilizzato alla validazione. Per provare Strict=False rimuovere una coppia: il relativo token resta letterale. Rimettere la coppia e Strict=True per ottenere il risultato atteso. I placeholder spezzati fra run, ripetuti e nelle intestazioni sono sostituiti insieme.");
         if (id == 5)
         {
             QuickTable([[1.0, 2.0], [3.0, 4.0]], [], strict: true, decimals: [1], units: ["mm"], widths: []);
@@ -410,6 +474,7 @@ public sealed class DefinitionBuilder
         if (!(bool)load.Invoke(server, [new GH_ExternalFile(plugin), false])!)
             throw new InvalidOperationException("Caricamento Pawper fallito.");
         BrandingChecks.Run(root);
+        InputIntegrationChecks.Run(root);
         var catalog = Json.Read<List<Catalog>>(File.ReadAllText(Path.Combine(root, "catalog.json")));
         var report = new List<object>();
         var coverage = new Dictionary<string, List<int>>();
@@ -559,10 +624,10 @@ public sealed class DefinitionBuilder
     }
     void WriteGuide(Catalog entry)
     {
-        var text = new StringBuilder($"# {entry.Id:00} {entry.Title}\n\n{entry.Purpose}\n\n## Prerequisiti e file\n\nRhino 8 con .NET 8 e Pawper installato. Conservare la cartella dentro examples, accanto ad assets.\n\n- `expected.docx`: risultato del motore indipendente.\n- `grasshopper-verified.docx`: risultato dei componenti della definizione.\n- `document.json`: specifica riproducibile.\n- `example.gh`: definizione binaria salvata, riaperta e ricalcolata in Rhino/Grasshopper.\n\n## Procedura\n\n1. Aprire example.gh e ricalcolare.\n2. Leggere Document Inspector: Validation deve essere vuoto.\n3. Modificare i valori degli input con il menu contestuale. I valori avanzati JSON sono già impostati.\n4. In Save Word portare Run su False e poi True. output.docx sarà creato accanto alla definizione. Per sostituire un file esistente abilitare Overwrite.\n5. Ricalcolare con Run ancora True: non deve esserci una nuova scrittura.\n6. In Open Result portare Run su False e poi True.\n7. In Word aggiornare i campi con F9.\n\n");
+        var text = new StringBuilder($"# {entry.Id:00} {entry.Title}\n\n{entry.Purpose}\n\n## Prerequisiti e file\n\nRhino 8 con .NET 8 e Pawper installato. Conservare la cartella dentro examples, accanto ad assets.\n\n- `expected.docx`: risultato del motore indipendente.\n- `grasshopper-verified.docx`: risultato dei componenti della definizione.\n- `document.json`: specifica riproducibile.\n- `example.gh`: definizione binaria salvata, riaperta e ricalcolata in Rhino/Grasshopper.\n\n## Procedura\n\n1. Aprire example.gh e ricalcolare.\n2. Leggere Document Inspector: Validation deve essere vuoto.\n3. Modificare gli input dal menu contestuale; Text Blocks e Text Table offrono anche un editor con doppio clic. Dove presenti, i formati avanzati sono già impostati.\n4. In Save Word portare Run su False e poi True. output.docx sarà creato accanto alla definizione. Per sostituire un file esistente abilitare Overwrite.\n5. Ricalcolare con Run ancora True: non deve esserci una nuova scrittura.\n6. In Open Result portare Run su False e poi True.\n7. In Word aggiornare i campi con F9.\n\n");
         foreach (var note in instructions)
             text.AppendLine(note + "\n");
-        text.AppendLine("## Componenti e collegamenti\n\nI numeri corrispondono ai nickname nel canvas. I valori sono già salvati. Blocks di Compose usa esplicitamente Flatten per comporre un solo documento da tutte le sorgenti; rimuoverlo per elaborare rami separati.\n");
+        text.AppendLine("## Componenti e collegamenti\n\nI numeri corrispondono ai nickname nel canvas. I valori sono già salvati. Dove presente, Blocks di Compose o Quick Document usa esplicitamente Flatten per comporre un solo documento da più sorgenti; rimuoverlo per elaborare rami separati.\n");
         foreach (var c in nodes)
         {
             text.AppendLine($"### {c.NickName} — {c.Name}\n\n{c.Description}\n");
@@ -575,6 +640,7 @@ public sealed class DefinitionBuilder
                     string v = p switch
                     {
                         Param_String x => string.Join(" | ", x.PersistentData.AllData(true).Select(t => t.ToString())),
+                        Param_Colour x => string.Join(", ", x.PersistentData.AllData(true).OfType<GH_Colour>().Select(t => ColorTranslator.ToHtml(t.Value))),
                         Param_Number x => string.Join(", ", x.PersistentData.AllData(true).Select(t => t.ToString())),
                         Param_Integer x => string.Join(", ", x.PersistentData.AllData(true).Select(t => t.ToString())),
                         Param_Boolean x => string.Join(", ", x.PersistentData.AllData(true).Select(t => t.ToString())),

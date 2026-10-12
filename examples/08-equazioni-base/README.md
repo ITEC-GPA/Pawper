@@ -15,15 +15,17 @@ Rhino 8 con .NET 8 e Pawper installato. Conservare la cartella dentro examples, 
 
 1. Aprire example.gh e ricalcolare.
 2. Leggere Document Inspector: Validation deve essere vuoto.
-3. Modificare i valori degli input con il menu contestuale. I valori avanzati JSON sono già impostati.
+3. Modificare gli input dal menu contestuale; Text Blocks e Text Table offrono anche un editor con doppio clic. Dove presenti, i formati avanzati sono già impostati.
 4. In Save Word portare Run su False e poi True. output.docx sarà creato accanto alla definizione. Per sostituire un file esistente abilitare Overwrite.
 5. Ricalcolare con Run ancora True: non deve esserci una nuova scrittura.
 6. In Open Result portare Run su False e poi True.
 7. In Word aggiornare i campi con F9.
 
+Text Blocks: doppio clic sul corpo o menu Modifica testo per l'editor; in alternativa collegare un Panel multilinea o una lista di righe. Un ramo produce una lista ordinata, rami distinti restano distinti. Righe vuote separano paragrafi; #..######### crea titoli, **grassetto**, *corsivo*, ***entrambi***. Gli elenchi -/+ e 1. usano due spazi per livello. $formula$ è inline, $$formula$$ separata; --- crea una pagina nuova. Usare testo.txt dove incluso. Editor disabilitato se Text è collegato o contiene più rami; Annulla non modifica l'input. Sintassi non chiusa produce un errore con numero di riga.
+
 ## Componenti e collegamenti
 
-I numeri corrispondono ai nickname nel canvas. I valori sono già salvati. Blocks di Compose usa esplicitamente Flatten per comporre un solo documento da tutte le sorgenti; rimuoverlo per elaborare rami separati.
+I numeri corrispondono ai nickname nel canvas. I valori sono già salvati. Dove presente, Blocks di Compose o Quick Document usa esplicitamente Flatten per comporre un solo documento da più sorgenti; rimuoverlo per elaborare rami separati.
 
 ### 01 New — New Document
 
@@ -36,7 +38,7 @@ Crea un documento vuoto oppure carica una copia di DOCX/DOTX.
 Aggiunge blocchi ordinati a una nuova copia del documento.
 
 - **Document** ← 01 New / Document
-- **Blocks** ← 03 Heading / Block, 04 Paragraph / Block, 08 Equation / Block, 09 Equation / Block
+- **Blocks** ← 03 Heading / Block, 04 Paragraph / Block, 08 Equation / Block, 09 Equation / Block, 10 TextBlocks / Blocks
 - **Styles** (list): `opzionale / vuoto`
 - **Layout** (item): `opzionale / vuoto`
 
@@ -125,35 +127,41 @@ Formula LaTeX nel sottoinsieme documentato, convertita in OMML modificabile.
 - **Numbered** (item): `False`
 - **Bookmark** (item): ``
 
-### 10 Inspect — Document Inspector
+### 10 TextBlocks — Text Blocks
+
+Titoli, paragrafi, elenchi e formule da un testo unico. Doppio clic per aprire l'editor; sottoinsieme documentato, non Markdown completo.
+
+- **Text** (list): `# Formule da testo | La tensione vale $\sigma=\frac{N}{A}$ nel modello dimostrativo. |  | $$x_1^2+\sqrt{a}$$ |  | $$ | \sum_{i=1}^{n}{x_i} | $$`
+
+### 11 Inspect — Document Inspector
 
 Struttura, stili, metadati e validazione; non è un'anteprima impaginata.
 
 - **Document** ← 02 Compose / Document
 
-### 11 Save — Save Word
+### 12 Save — Save Word
 
 Scrive solo sul fronte False→True. Dopo riapertura portare Run a False prima di salvare.
 
 - **Document** ← 02 Compose / Document
-- **Path** ← 12 Path / Full path
+- **Path** ← 13 Path / Full path
 - **Run** (item): `False`
 - **Overwrite** (item): `False`
 
-### 12 Path — Project Path
+### 13 Path — Project Path
 
 Risolve un percorso rispetto al file .gh salvato, per esempi portabili.
 
 - **Relative path** (item): `output.docx`
 
-### 13 Open — Open Result
+### 14 Open — Open Result
 
 Apre il DOCX nell'applicazione associata solo su comando esplicito.
 
-- **Path** ← 14 Path / Full path
+- **Path** ← 15 Path / Full path
 - **Run** (item): `False`
 
-### 14 Path — Project Path
+### 15 Path — Project Path
 
 Risolve un percorso rispetto al file .gh salvato, per esempi portabili.
 

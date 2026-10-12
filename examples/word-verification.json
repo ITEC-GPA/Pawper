@@ -72,12 +72,12 @@
   {
     "File": "08-equazioni-base\\expected.docx",
     "Success": true,
-    "EditableEquations": 3
+    "EditableEquations": 6
   },
   {
     "File": "08-equazioni-base\\grasshopper-verified.docx",
     "Success": true,
-    "EditableEquations": 3
+    "EditableEquations": 6
   },
   {
     "File": "09-equazioni-avanzate\\expected.docx",

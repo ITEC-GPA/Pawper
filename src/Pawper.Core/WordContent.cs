@@ -92,7 +92,10 @@ public sealed partial class WordEngine
                                 run.AddFirst(rp);
                             }
                             rp.Element(w + "color")?.Remove();
-                            rp.Add(V("color", "FFFFFF"));
+                            // Compare relative luminance: choose the higher contrast black/white text.
+                            double Channel(int offset) { double c = Convert.ToInt32(fill.Substring(offset, 2), 16) / 255d; return c <= 0.04045 ? c / 12.92 : Math.Pow((c + 0.055) / 1.055, 2.4); }
+                            double luminance = 0.2126 * Channel(0) + 0.7152 * Channel(2) + 0.0722 * Channel(4);
+                            rp.Add(V("color", luminance > 0.179 ? "000000" : "FFFFFF"));
                         }
                 }
                 tr.Add(tc);

@@ -46,8 +46,8 @@
     "Subject": "Documentazione parametrica",
     "Keywords": "Pawper; report",
     "Custom": {
-      "Codice": "PRJ-001",
-      "Revisione": "A"
+      "Revisione": "A",
+      "Codice": "PRJ-001"
     }
   },
   "Replacements": null,

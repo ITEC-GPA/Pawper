@@ -1,9 +1,9 @@
 {
   "Name": "Pawper",
-  "Components": 35,
+  "Components": 41,
   "Parameters": 7,
-  "Icons": 42,
+  "Icons": 48,
   "PersistentIdsPreserved": 41,
-  "NewIds": 2,
+  "NewIds": 8,
   "PreviousDefinitionsReopened": 20
 }

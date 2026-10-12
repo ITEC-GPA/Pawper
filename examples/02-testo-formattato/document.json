@@ -242,6 +242,132 @@
       "ListLevel": null,
       "Bullet": false,
       "ListKey": "default"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Testo da un unico input",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Heading1",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Un paragrafo con ",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        },
+        {
+          "Text": "grassetto",
+          "Format": {
+            "Font": null,
+            "Size": null,
+            "Bold": true,
+            "Italic": false,
+            "Underline": false,
+            "Color": null,
+            "Script": null
+          },
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        },
+        {
+          "Text": ", ",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        },
+        {
+          "Text": "corsivo",
+          "Format": {
+            "Font": null,
+            "Size": null,
+            "Bold": false,
+            "Italic": true,
+            "Underline": false,
+            "Color": null,
+            "Script": null
+          },
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        },
+        {
+          "Text": " e ",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        },
+        {
+          "Text": "entrambi",
+          "Format": {
+            "Font": null,
+            "Size": null,
+            "Bold": true,
+            "Italic": true,
+            "Underline": false,
+            "Color": null,
+            "Script": null
+          },
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        },
+        {
+          "Text": ".\nQuesta riga resta nello stesso paragrafo.",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Simboli letterali: * e $.",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
     }
   ],
   "SourceBase64": null,

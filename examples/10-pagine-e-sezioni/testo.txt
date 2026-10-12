@@ -1,0 +1,3 @@
+---
+# Pagina da testo strutturato
+Tre trattini isolati creano un'interruzione di pagina nativa.

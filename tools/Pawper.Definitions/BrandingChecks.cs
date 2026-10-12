@@ -12,13 +12,14 @@ internal static class BrandingChecks
 {
     internal static void Run(string examples)
     {
+        LoadingChecks.Run(examples);
         string project = Path.GetFullPath(Path.Combine(examples, ".."));
         string assets = Path.Combine(project, "assets", "icons");
         Directory.CreateDirectory(assets);
         var assembly = typeof(NewDocumentComponent).Assembly;
         var objects = assembly.GetTypes().Where(t => !t.IsAbstract && typeof(IGH_DocumentObject).IsAssignableFrom(t))
             .Select(t => (IGH_DocumentObject)Activator.CreateInstance(t)!).OrderBy(o => o.GetType().Name).ToArray();
-        if (objects.Length != 42 || objects.Select(o => o.ComponentGuid).Distinct().Count() != 42)
+        if (objects.Length != 48 || objects.Select(o => o.ComponentGuid).Distinct().Count() != 48)
             throw new InvalidOperationException("Componenti, parametri o identificatori non validi.");
         var stableType = assembly.GetType("Pawper.Grasshopper.StableIds")!;
         var stable = (IReadOnlyDictionary<string, Guid>)stableType.GetField("Values", BindingFlags.Static | BindingFlags.NonPublic)!.GetValue(null)!;
@@ -77,7 +78,7 @@ internal static class BrandingChecks
         File.WriteAllText(Path.Combine(examples, "branding-verification.json"), Json.Write(new
         {
             Name = "Pawper", Components = objects.OfType<GH_Component>().Count(), Parameters = 7, Icons = objects.Length,
-            PersistentIdsPreserved = 41, NewIds = 2, PreviousDefinitionsReopened = previous
+            PersistentIdsPreserved = 41, NewIds = 8, PreviousDefinitionsReopened = previous
         }));
         Console.WriteLine($"PAWPER BRANDING OK: {objects.Length} icons, {previous} previous definitions reopened");
     }

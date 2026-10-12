@@ -1,0 +1,9 @@
+# Elenchi da testo
+- Primo punto
+  - Sottopunto
++ Secondo punto
+
+1. Prima fase
+2. Seconda fase
+
+1. Nuovo elenco numerato

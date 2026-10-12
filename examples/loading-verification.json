@@ -1,0 +1,12 @@
+{
+  "Success": true,
+  "EntryPoint": "PawperPriority.PriorityLoad",
+  "Category": "Pawper",
+  "ShortName": "Paw",
+  "Symbol": "P",
+  "IconWidth": 16,
+  "IconHeight": 16,
+  "Instruction": "Proceed",
+  "SdkAssembly": "8.35.26251.13001",
+  "VisibleRhinoStartupTested": false
+}

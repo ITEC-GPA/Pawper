@@ -55,6 +55,12 @@ public static class PawperIcons
                 Line(8, 14, 17, 14); Line(12.5f, 9.5f, 12.5f, 18.5f); break;
             case "Compose": case "ContentBlock":
                 g.FillRectangle(pale, 7, 10, 11, 3); g.FillRectangle(ink, 7, 14, 11, 2); g.FillRectangle(accent, 7, 18, 11, 2); break;
+            case "TextBlocks": Text("#", 9, 6, 8); Line(13, 12, 18, 12); Line(7, 16, 18, 16); Line(7, 19, 15, 19); break;
+            case "QuickDocument": Text("+", 13, 7, 7); g.FillEllipse(accent, 15, 17, 4, 4); break;
+            case "FillFields": Text("=", 11, 8, 8); g.FillEllipse(accent, 7, 18, 3, 3); Line(12, 19, 18, 19); break;
+            case "ParagraphFormat": Line(7, 11, 18, 11); Line(9, 15, 16, 15); Line(7, 19, 18, 19); g.FillEllipse(accent, 3, 13, 3, 3); break;
+            case "TableFormat": Grid(); g.FillRectangle(accent, 7.5f, 10.5f, 10, 2); break;
+            case "PagePreset": Text("A4", 8, 6, 12); break;
             case "TextRun": Text("Ab"); break;
             case "Paragraph": Line(7, 11, 18, 11); Line(7, 14.5f, 18, 14.5f); Line(7, 18, 14, 18); break;
             case "Heading": Text("H", 12, 8, 8); break;
@@ -109,8 +115,8 @@ public sealed class PawperPriority : GH_AssemblyPriority
 {
     public override GH_LoadingInstruction PriorityLoad()
     {
-        global::Grasshopper.Instances.ComponentServer.AddCategoryIcon("Pawper", PawperIcons.Create("Pawper"));
-        global::Grasshopper.Instances.ComponentServer.AddCategoryShortName("Pawper", "Pawper");
+        global::Grasshopper.Instances.ComponentServer.AddCategoryIcon("Pawper", PawperIcons.Create("Pawper", 16));
+        global::Grasshopper.Instances.ComponentServer.AddCategoryShortName("Pawper", "Paw");
         global::Grasshopper.Instances.ComponentServer.AddCategorySymbolName("Pawper", 'P');
         return GH_LoadingInstruction.Proceed;
     }

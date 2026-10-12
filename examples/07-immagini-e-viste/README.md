@@ -15,7 +15,7 @@ Rhino 8 con .NET 8 e Pawper installato. Conservare la cartella dentro examples, 
 
 1. Aprire example.gh e ricalcolare.
 2. Leggere Document Inspector: Validation deve essere vuoto.
-3. Modificare i valori degli input con il menu contestuale. I valori avanzati JSON sono già impostati.
+3. Modificare gli input dal menu contestuale; Text Blocks e Text Table offrono anche un editor con doppio clic. Dove presenti, i formati avanzati sono già impostati.
 4. In Save Word portare Run su False e poi True. output.docx sarà creato accanto alla definizione. Per sostituire un file esistente abilitare Overwrite.
 5. Ricalcolare con Run ancora True: non deve esserci una nuova scrittura.
 6. In Open Result portare Run su False e poi True.
@@ -25,7 +25,7 @@ Aprire il file incluso model.3dm in una finestra Rhino visibile. Sbloccare Captu
 
 ## Componenti e collegamenti
 
-I numeri corrispondono ai nickname nel canvas. I valori sono già salvati. Blocks di Compose usa esplicitamente Flatten per comporre un solo documento da tutte le sorgenti; rimuoverlo per elaborare rami separati.
+I numeri corrispondono ai nickname nel canvas. I valori sono già salvati. Dove presente, Blocks di Compose o Quick Document usa esplicitamente Flatten per comporre un solo documento da più sorgenti; rimuoverlo per elaborare rami separati.
 
 ### 01 New — New Document
 

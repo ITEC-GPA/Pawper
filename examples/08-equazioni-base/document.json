@@ -65,6 +65,72 @@
       "Inline": true,
       "BookmarkName": null,
       "Numbered": false
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Formule da testo",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Heading1",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "La tensione vale ",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        },
+        {
+          "Text": "",
+          "Format": null,
+          "Link": null,
+          "Math": "\\sigma=\\frac{N}{A}",
+          "Field": null,
+          "StyleId": null
+        },
+        {
+          "Text": " nel modello dimostrativo.",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "equation",
+      "Latex": "x_1^2\u002B\\sqrt{a}",
+      "Inline": false,
+      "BookmarkName": null,
+      "Numbered": false
+    },
+    {
+      "kind": "equation",
+      "Latex": "\\sum_{i=1}^{n}{x_i}",
+      "Inline": false,
+      "BookmarkName": null,
+      "Numbered": false
     }
   ],
   "SourceBase64": null,

@@ -5,6 +5,12 @@ internal static class StableIds
 {
     internal static readonly IReadOnlyDictionary<string, Guid> Values = new Dictionary<string, Guid>
     {
+        ["TextBlocksComponent"] = new("6d04b558-f12b-4272-86bc-d5cac266f104"),
+        ["QuickDocumentComponent"] = new("3db513de-4f90-4c2c-aaae-174a19bcdec6"),
+        ["FillFieldsComponent"] = new("06c77474-7998-4972-8692-1cc114247a24"),
+        ["ParagraphFormatComponent"] = new("64a58a12-8f0e-4465-8bd8-a61c8aba7dcf"),
+        ["TableFormatComponent"] = new("be6a9703-bcc8-4fc6-a54b-9512c37ecf11"),
+        ["PagePresetComponent"] = new("a0d4af2c-a4cb-4ce4-9e33-c5cb86c8b822"),
         ["Assembly"] = new("7e1b1895-f3de-d9c4-6911-887ffbe9d923"),
         ["BatchComponent"] = new("6ad50a4a-f4f1-557b-d984-d5a8626a01fb"),
         ["BookmarkComponent"] = new("0493f136-307c-318f-424b-6fa5521c1c82"),

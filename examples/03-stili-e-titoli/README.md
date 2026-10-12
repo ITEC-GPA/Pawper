@@ -15,46 +15,45 @@ Rhino 8 con .NET 8 e Pawper installato. Conservare la cartella dentro examples, 
 
 1. Aprire example.gh e ricalcolare.
 2. Leggere Document Inspector: Validation deve essere vuoto.
-3. Modificare i valori degli input con il menu contestuale. I valori avanzati JSON sono già impostati.
+3. Modificare gli input dal menu contestuale; Text Blocks e Text Table offrono anche un editor con doppio clic. Dove presenti, i formati avanzati sono già impostati.
 4. In Save Word portare Run su False e poi True. output.docx sarà creato accanto alla definizione. Per sostituire un file esistente abilitare Overwrite.
 5. Ricalcolare con Run ancora True: non deve esserci una nuova scrittura.
 6. In Open Result portare Run su False e poi True.
 7. In Word aggiornare i campi con F9.
 
+Paragraph Format: scegliere l'allineamento dal menu o dall'input; Before/After sono punti, Line è un multiplo. Collegare Format a Paragraph.Format oppure Word Style.Paragraph format. Keep next mantiene il paragrafo col successivo. Per rientri e opzioni aggiuntive resta disponibile il formato avanzato.
+
+Table Format: collegare una tabella a Table e tre Colour Swatch opachi a Header, Stripe e Border. Padding è in mm. Style ID vuoto mantiene lo stile precedente. L'output è una copia: un secondo ramo resta invariato. Nell'esempio 06 l'intestazione chiara usa testo nero; gli altri esempi mostrano intestazioni scure con testo bianco. Celle unite e contenuti complessi sono conservati.
+
 ## Componenti e collegamenti
 
-I numeri corrispondono ai nickname nel canvas. I valori sono già salvati. Blocks di Compose usa esplicitamente Flatten per comporre un solo documento da tutte le sorgenti; rimuoverlo per elaborare rami separati.
+I numeri corrispondono ai nickname nel canvas. I valori sono già salvati. Dove presente, Blocks di Compose o Quick Document usa esplicitamente Flatten per comporre un solo documento da più sorgenti; rimuoverlo per elaborare rami separati.
 
-### 01 New — New Document
+### 01 QuickDoc — Quick Document
 
-Crea un documento vuoto oppure carica una copia di DOCX/DOTX.
+Crea un documento con titolo, blocchi ordinati e impostazioni opzionali. Il salvataggio resta esplicito in Save Word.
 
-- **Template path** (item): ``
-
-### 02 Compose — Compose Document
-
-Aggiunge blocchi ordinati a una nuova copia del documento.
-
-- **Document** ← 01 New / Document
-- **Blocks** ← 03 Heading / Block, 04 Heading / Block, 05 Paragraph / Block, 06 Heading / Block, 07 Heading / Block, 08 Heading / Block, 09 Heading / Block, 10 Heading / Block, 11 Heading / Block, 12 Heading / Block, 13 Heading / Block, 14 Heading / Block, 15 Paragraph / Block, 30 Table / Block
-- **Styles** ← 31 Style / Style, 32 Style / Style, 33 Style / Style
+- **Title** (item): ``
+- **Blocks** ← 02 Heading / Block, 03 Heading / Block, 04 Paragraph / Block, 05 Heading / Block, 06 Heading / Block, 07 Heading / Block, 08 Heading / Block, 09 Heading / Block, 10 Heading / Block, 11 Heading / Block, 12 Heading / Block, 13 Heading / Block, 14 Paragraph / Block, 30 TableFormat / Block
 - **Layout** (item): `opzionale / vuoto`
+- **Template path** (item): ``
+- **Styles** ← 31 Style / Style, 33 Style / Style, 35 Style / Style
 
-### 03 Heading — Heading
+### 02 Heading — Heading
 
 Titolo, sottotitolo o intestazione gerarchica.
 
 - **Text** (item): `Stili del progetto`
 - **Level** (item): `0`
 
-### 04 Heading — Heading
+### 03 Heading — Heading
 
 Titolo, sottotitolo o intestazione gerarchica.
 
 - **Text** (item): `Sottotitolo della relazione`
 - **Level** (item): `-1`
 
-### 05 Paragraph — Paragraph
+### 04 Paragraph — Paragraph
 
 Paragrafo con testo, run misti e stile Word.
 
@@ -63,79 +62,79 @@ Paragrafo con testo, run misti e stile Word.
 - **Style ID** (item): `ProjectBody`
 - **Format** (item): ``
 
-### 06 Heading — Heading
+### 05 Heading — Heading
 
 Titolo, sottotitolo o intestazione gerarchica.
 
 - **Text** (item): `Intestazione livello 1`
 - **Level** (item): `1`
 
-### 07 Heading — Heading
+### 06 Heading — Heading
 
 Titolo, sottotitolo o intestazione gerarchica.
 
 - **Text** (item): `Intestazione livello 2`
 - **Level** (item): `2`
 
-### 08 Heading — Heading
+### 07 Heading — Heading
 
 Titolo, sottotitolo o intestazione gerarchica.
 
 - **Text** (item): `Intestazione livello 3`
 - **Level** (item): `3`
 
-### 09 Heading — Heading
+### 08 Heading — Heading
 
 Titolo, sottotitolo o intestazione gerarchica.
 
 - **Text** (item): `Intestazione livello 4`
 - **Level** (item): `4`
 
-### 10 Heading — Heading
+### 09 Heading — Heading
 
 Titolo, sottotitolo o intestazione gerarchica.
 
 - **Text** (item): `Intestazione livello 5`
 - **Level** (item): `5`
 
-### 11 Heading — Heading
+### 10 Heading — Heading
 
 Titolo, sottotitolo o intestazione gerarchica.
 
 - **Text** (item): `Intestazione livello 6`
 - **Level** (item): `6`
 
-### 12 Heading — Heading
+### 11 Heading — Heading
 
 Titolo, sottotitolo o intestazione gerarchica.
 
 - **Text** (item): `Intestazione livello 7`
 - **Level** (item): `7`
 
-### 13 Heading — Heading
+### 12 Heading — Heading
 
 Titolo, sottotitolo o intestazione gerarchica.
 
 - **Text** (item): `Intestazione livello 8`
 - **Level** (item): `8`
 
-### 14 Heading — Heading
+### 13 Heading — Heading
 
 Titolo, sottotitolo o intestazione gerarchica.
 
 - **Text** (item): `Intestazione livello 9`
 - **Level** (item): `9`
 
-### 15 Paragraph — Paragraph
+### 14 Paragraph — Paragraph
 
 Paragrafo con testo, run misti e stile Word.
 
 - **Text** (item): ``
-- **Runs** ← 16 Run / Run
+- **Runs** ← 15 Run / Run
 - **Style ID** (item): `Normal`
 - **Format** (item): ``
 
-### 16 Run — Text Run
+### 15 Run — Text Run
 
 Testo formattato, collegamento, formula inline o campo.
 
@@ -152,14 +151,14 @@ Testo formattato, collegamento, formula inline o campo.
 - **Field** (item): ``
 - **Style ID** (item): `EmphasisProject`
 
-### 17 Rows — Table Rows
+### 16 Rows — Table Rows
 
 Organizza una lista ordinata di celle in righe con lunghezze esplicite.
 
-- **Cells** ← 18 Cell / Cell, 19 Cell / Cell, 20 Cell / Cell, 21 Cell / Cell, 22 Cell / Cell, 23 Cell / Cell, 24 Cell / Cell, 25 Cell / Cell, 26 Cell / Cell, 27 Cell / Cell, 28 Cell / Cell, 29 Cell / Cell
+- **Cells** ← 17 Cell / Cell, 18 Cell / Cell, 19 Cell / Cell, 20 Cell / Cell, 21 Cell / Cell, 22 Cell / Cell, 23 Cell / Cell, 24 Cell / Cell, 25 Cell / Cell, 26 Cell / Cell, 27 Cell / Cell, 28 Cell / Cell
 - **Counts** (list): `3, 3, 3, 3`
 
-### 18 Cell — Table Cell
+### 17 Cell — Table Cell
 
 Cella con blocchi, unioni e colore condizionale collegabile.
 
@@ -170,7 +169,7 @@ Cella con blocchi, unioni e colore condizionale collegabile.
 - **Fill** (item): ``
 - **Alignment** (item): `left`
 
-### 19 Cell — Table Cell
+### 18 Cell — Table Cell
 
 Cella con blocchi, unioni e colore condizionale collegabile.
 
@@ -181,7 +180,7 @@ Cella con blocchi, unioni e colore condizionale collegabile.
 - **Fill** (item): ``
 - **Alignment** (item): `left`
 
-### 20 Cell — Table Cell
+### 19 Cell — Table Cell
 
 Cella con blocchi, unioni e colore condizionale collegabile.
 
@@ -192,7 +191,7 @@ Cella con blocchi, unioni e colore condizionale collegabile.
 - **Fill** (item): ``
 - **Alignment** (item): `left`
 
-### 21 Cell — Table Cell
+### 20 Cell — Table Cell
 
 Cella con blocchi, unioni e colore condizionale collegabile.
 
@@ -203,7 +202,7 @@ Cella con blocchi, unioni e colore condizionale collegabile.
 - **Fill** (item): ``
 - **Alignment** (item): `left`
 
-### 22 Cell — Table Cell
+### 21 Cell — Table Cell
 
 Cella con blocchi, unioni e colore condizionale collegabile.
 
@@ -214,7 +213,7 @@ Cella con blocchi, unioni e colore condizionale collegabile.
 - **Fill** (item): ``
 - **Alignment** (item): `right`
 
-### 23 Cell — Table Cell
+### 22 Cell — Table Cell
 
 Cella con blocchi, unioni e colore condizionale collegabile.
 
@@ -225,7 +224,7 @@ Cella con blocchi, unioni e colore condizionale collegabile.
 - **Fill** (item): ``
 - **Alignment** (item): `left`
 
-### 24 Cell — Table Cell
+### 23 Cell — Table Cell
 
 Cella con blocchi, unioni e colore condizionale collegabile.
 
@@ -236,7 +235,7 @@ Cella con blocchi, unioni e colore condizionale collegabile.
 - **Fill** (item): ``
 - **Alignment** (item): `left`
 
-### 25 Cell — Table Cell
+### 24 Cell — Table Cell
 
 Cella con blocchi, unioni e colore condizionale collegabile.
 
@@ -247,7 +246,7 @@ Cella con blocchi, unioni e colore condizionale collegabile.
 - **Fill** (item): ``
 - **Alignment** (item): `right`
 
-### 26 Cell — Table Cell
+### 25 Cell — Table Cell
 
 Cella con blocchi, unioni e colore condizionale collegabile.
 
@@ -258,11 +257,22 @@ Cella con blocchi, unioni e colore condizionale collegabile.
 - **Fill** (item): ``
 - **Alignment** (item): `left`
 
-### 27 Cell — Table Cell
+### 26 Cell — Table Cell
 
 Cella con blocchi, unioni e colore condizionale collegabile.
 
 - **Text** (item): `Dato mancante`
+- **Blocks** (list): `opzionale / vuoto`
+- **Column span** (item): `1`
+- **Row span** (item): `1`
+- **Fill** (item): ``
+- **Alignment** (item): `left`
+
+### 27 Cell — Table Cell
+
+Cella con blocchi, unioni e colore condizionale collegabile.
+
+- **Text** (item): ``
 - **Blocks** (list): `opzionale / vuoto`
 - **Column span** (item): `1`
 - **Row span** (item): `1`
@@ -280,25 +290,25 @@ Cella con blocchi, unioni e colore condizionale collegabile.
 - **Fill** (item): ``
 - **Alignment** (item): `left`
 
-### 29 Cell — Table Cell
-
-Cella con blocchi, unioni e colore condizionale collegabile.
-
-- **Text** (item): ``
-- **Blocks** (list): `opzionale / vuoto`
-- **Column span** (item): `1`
-- **Row span** (item): `1`
-- **Fill** (item): ``
-- **Alignment** (item): `left`
-
-### 30 Table — Word Table
+### 29 Table — Word Table
 
 Ogni ramo del Data Tree è una riga; ogni elemento è una cella. Ordine dei path Grasshopper preservato.
 
-- **Rows** ← 17 Rows / Rows
+- **Rows** ← 16 Rows / Rows
 - **Widths mm** (list): `70, 45, 40`
 - **Header** (item): `True`
 - **Options** (item): `{   "HeaderFill": "24445C",   "StripeFill": "EEF3F6",   "BorderColor": "CBD5DD",   "PaddingMm": 2,   "StyleId": "ProjectTable" }`
+
+### 30 TableFormat — Table Format
+
+Colori e margini di una tabella completa. Preserva contenuti, celle unite e larghezze; restituisce una copia.
+
+- **Table** ← 29 Table / Block
+- **Header** (item): `#24445C`
+- **Stripe** (item): `#EEF3F6`
+- **Border** (item): `#CBD5DD`
+- **Padding mm** (item): `2`
+- **Style ID** (item): `ProjectTable`
 
 ### 31 Style — Word Style
 
@@ -308,10 +318,20 @@ Crea o aggiorna uno stile Word per ID, distinto dal nome visualizzato.
 - **Name** (item): `Testo progetto`
 - **Based on** (item): `Normal`
 - **Run format** (item): `{   "Font": "Aptos",   "Size": 11,   "Bold": false,   "Italic": false,   "Underline": false,   "Color": "24445C",   "Script": null }`
-- **Paragraph format** (item): `{   "Alignment": "left",   "Before": 0,   "After": 8,   "Line": 1.15,   "LeftMm": 0,   "RightMm": 0,   "FirstLineMm": 0,   "KeepNext": false }`
+- **Paragraph format** ← 32 ParaFormat / Format
 - **Type** (item): `paragraph`
 
-### 32 Style — Word Style
+### 32 ParaFormat — Paragraph Format
+
+Impostazioni del paragrafo con input diretti. Collegare Format a Paragraph oppure a Paragraph format di Word Style.
+
+- **Alignment** (item): `left`
+- **Before pt** (item): `0`
+- **After pt** (item): `8`
+- **Line** (item): `1.15`
+- **Keep next** (item): `False`
+
+### 33 Style — Word Style
 
 Crea o aggiorna uno stile Word per ID, distinto dal nome visualizzato.
 
@@ -319,10 +339,20 @@ Crea o aggiorna uno stile Word per ID, distinto dal nome visualizzato.
 - **Name** (item): `Evidenza`
 - **Based on** (item): `Normal`
 - **Run format** (item): `{   "Font": null,   "Size": null,   "Bold": false,   "Italic": true,   "Underline": false,   "Color": null,   "Script": null }`
-- **Paragraph format** (item): `{   "Alignment": "left",   "Before": 0,   "After": 6,   "Line": 1.15,   "LeftMm": 0,   "RightMm": 0,   "FirstLineMm": 0,   "KeepNext": false }`
+- **Paragraph format** ← 34 ParaFormat / Format
 - **Type** (item): `character`
 
-### 33 Style — Word Style
+### 34 ParaFormat — Paragraph Format
+
+Impostazioni del paragrafo con input diretti. Collegare Format a Paragraph oppure a Paragraph format di Word Style.
+
+- **Alignment** (item): `left`
+- **Before pt** (item): `0`
+- **After pt** (item): `6`
+- **Line** (item): `1.15`
+- **Keep next** (item): `False`
+
+### 35 Style — Word Style
 
 Crea o aggiorna uno stile Word per ID, distinto dal nome visualizzato.
 
@@ -330,38 +360,48 @@ Crea o aggiorna uno stile Word per ID, distinto dal nome visualizzato.
 - **Name** (item): `Tabella progetto`
 - **Based on** (item): `Normal`
 - **Run format** (item): `{   "Font": "Aptos",   "Size": 11,   "Bold": false,   "Italic": false,   "Underline": false,   "Color": null,   "Script": null }`
-- **Paragraph format** (item): `{   "Alignment": "left",   "Before": 0,   "After": 6,   "Line": 1.15,   "LeftMm": 0,   "RightMm": 0,   "FirstLineMm": 0,   "KeepNext": false }`
+- **Paragraph format** ← 36 ParaFormat / Format
 - **Type** (item): `table`
 
-### 34 Inspect — Document Inspector
+### 36 ParaFormat — Paragraph Format
+
+Impostazioni del paragrafo con input diretti. Collegare Format a Paragraph oppure a Paragraph format di Word Style.
+
+- **Alignment** (item): `left`
+- **Before pt** (item): `0`
+- **After pt** (item): `6`
+- **Line** (item): `1.15`
+- **Keep next** (item): `False`
+
+### 37 Inspect — Document Inspector
 
 Struttura, stili, metadati e validazione; non è un'anteprima impaginata.
 
-- **Document** ← 02 Compose / Document
+- **Document** ← 01 QuickDoc / Document
 
-### 35 Save — Save Word
+### 38 Save — Save Word
 
 Scrive solo sul fronte False→True. Dopo riapertura portare Run a False prima di salvare.
 
-- **Document** ← 02 Compose / Document
-- **Path** ← 36 Path / Full path
+- **Document** ← 01 QuickDoc / Document
+- **Path** ← 39 Path / Full path
 - **Run** (item): `False`
 - **Overwrite** (item): `False`
 
-### 36 Path — Project Path
+### 39 Path — Project Path
 
 Risolve un percorso rispetto al file .gh salvato, per esempi portabili.
 
 - **Relative path** (item): `output.docx`
 
-### 37 Open — Open Result
+### 40 Open — Open Result
 
 Apre il DOCX nell'applicazione associata solo su comando esplicito.
 
-- **Path** ← 38 Path / Full path
+- **Path** ← 41 Path / Full path
 - **Run** (item): `False`
 
-### 38 Path — Project Path
+### 41 Path — Project Path
 
 Risolve un percorso rispetto al file .gh salvato, per esempi portabili.
 

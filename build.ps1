@@ -72,6 +72,10 @@ try {
         & dotnet build Pawper.sln -c Release --no-restore --disable-build-servers @properties
         if ($LASTEXITCODE -ne 0) { throw 'Compilazione fallita; bin precedente conservata.' }
 
+        # Test the real Grasshopper startup callback before publishing any build.
+        & dotnet (Join-Path $buildDirectory 'bin/Pawper.Definitions/Release/net8.0-windows/Pawper.Definitions.dll') examples --loading-check
+        if ($LASTEXITCODE -ne 0) { throw 'Registrazione Grasshopper fallita; bin precedente conservata.' }
+
         if ($Verify) {
             & dotnet (Join-Path $buildDirectory 'bin/Pawper.Verify/Release/net8.0/Pawper.Verify.dll') examples
             if ($LASTEXITCODE -ne 0) { throw 'Verifiche motore fallite; bin precedente conservata.' }
@@ -91,6 +95,17 @@ try {
             Copy-Item -LiteralPath $source -Destination (Join-Path $staged $name)
         }
         foreach ($path in @($staged, $previous, $releaseDirectory)) { Assert-ProjectPath $path }
+        # Fail before moving a release that Rhino is still using.
+        foreach ($name in $releaseFiles) {
+            $installedFile = Join-Path $releaseDirectory $name
+            if (Test-Path -LiteralPath $installedFile -PathType Leaf) {
+                try {
+                    $probe = [IO.File]::Open($installedFile, [IO.FileMode]::Open, [IO.FileAccess]::ReadWrite, [IO.FileShare]::None)
+                    $probe.Dispose()
+                }
+                catch { throw "File Release in uso o non accessibile: $installedFile. Chiudere Rhino prima di compilare. La bin precedente è conservata." }
+            }
+        }
         if (Test-Path -LiteralPath $releaseDirectory) { [IO.Directory]::Move($releaseDirectory, $previous) }
         try { [IO.Directory]::Move($staged, $releaseDirectory) }
         catch {

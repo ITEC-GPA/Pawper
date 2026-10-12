@@ -143,6 +143,132 @@
       "ListLevel": 0,
       "Bullet": false,
       "ListKey": "second"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Elenchi da testo",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Heading1",
+      "Format": null,
+      "ListLevel": null,
+      "Bullet": false,
+      "ListKey": "default"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Primo punto",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": null,
+      "ListLevel": 0,
+      "Bullet": true,
+      "ListKey": "example-4/1"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Sottopunto",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": null,
+      "ListLevel": 1,
+      "Bullet": true,
+      "ListKey": "example-4/1"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Secondo punto",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": null,
+      "ListLevel": 0,
+      "Bullet": true,
+      "ListKey": "example-4/1"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Prima fase",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": null,
+      "ListLevel": 0,
+      "Bullet": false,
+      "ListKey": "example-4/2"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Seconda fase",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": null,
+      "ListLevel": 0,
+      "Bullet": false,
+      "ListKey": "example-4/2"
+    },
+    {
+      "kind": "paragraph",
+      "Runs": [
+        {
+          "Text": "Nuovo elenco numerato",
+          "Format": null,
+          "Link": null,
+          "Math": null,
+          "Field": null,
+          "StyleId": null
+        }
+      ],
+      "StyleId": "Normal",
+      "Format": null,
+      "ListLevel": 0,
+      "Bullet": false,
+      "ListKey": "example-4/3"
     }
   ],
   "SourceBase64": null,

@@ -47,6 +47,8 @@ public sealed class QuickTableComponent : WordComponent
 
 public sealed class TextTableComponent : WordComponent
 {
+    public override void CreateAttributes() => m_attributes = new TextEditorAttributes(this, TextInputEditor.TableHelp);
+    protected override void AppendAdditionalComponentMenuItems(System.Windows.Forms.ToolStripDropDown menu) { base.AppendAdditionalComponentMenuItems(menu); TextInputEditor.Append(menu, this, TextInputEditor.TableHelp); }
     public TextTableComponent() : base("Text Table", "TextTable", "Tabella intera da testo incollato da Excel (TAB), CSV o righe di un Panel. Gestisce virgolette e celle multilinea.", "Tables") { }
     protected override void RegisterInputParams(GH_InputParamManager p)
     {

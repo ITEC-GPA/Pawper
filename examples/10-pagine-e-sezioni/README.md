@@ -15,15 +15,19 @@ Rhino 8 con .NET 8 e Pawper installato. Conservare la cartella dentro examples, 
 
 1. Aprire example.gh e ricalcolare.
 2. Leggere Document Inspector: Validation deve essere vuoto.
-3. Modificare i valori degli input con il menu contestuale. I valori avanzati JSON sono già impostati.
+3. Modificare gli input dal menu contestuale; Text Blocks e Text Table offrono anche un editor con doppio clic. Dove presenti, i formati avanzati sono già impostati.
 4. In Save Word portare Run su False e poi True. output.docx sarà creato accanto alla definizione. Per sostituire un file esistente abilitare Overwrite.
 5. Ricalcolare con Run ancora True: non deve esserci una nuova scrittura.
 6. In Open Result portare Run su False e poi True.
 7. In Word aggiornare i campi con F9.
 
+Text Blocks: doppio clic sul corpo o menu Modifica testo per l'editor; in alternativa collegare un Panel multilinea o una lista di righe. Un ramo produce una lista ordinata, rami distinti restano distinti. Righe vuote separano paragrafi; #..######### crea titoli, **grassetto**, *corsivo*, ***entrambi***. Gli elenchi -/+ e 1. usano due spazi per livello. $formula$ è inline, $$formula$$ separata; --- crea una pagina nuova. Usare testo.txt dove incluso. Editor disabilitato se Text è collegato o contiene più rami; Annulla non modifica l'input. Sintassi non chiusa produce un errore con numero di riga.
+
+I quattro Page Preset dimostrano A4, A3 orizzontale, Letter e Legal, con un Quick Document ciascuno. Per provare un formato collegare quel Quick Document a Save Word al posto del documento principale. I menu Format e Landscape controllano dimensioni e orientamento; margini troppo grandi sono rifiutati. I campi PAGE/NUMPAGES vanno aggiornati in Word.
+
 ## Componenti e collegamenti
 
-I numeri corrispondono ai nickname nel canvas. I valori sono già salvati. Blocks di Compose usa esplicitamente Flatten per comporre un solo documento da tutte le sorgenti; rimuoverlo per elaborare rami separati.
+I numeri corrispondono ai nickname nel canvas. I valori sono già salvati. Dove presente, Blocks di Compose o Quick Document usa esplicitamente Flatten per comporre un solo documento da più sorgenti; rimuoverlo per elaborare rami separati.
 
 ### 01 New — New Document
 
@@ -36,9 +40,9 @@ Crea un documento vuoto oppure carica una copia di DOCX/DOTX.
 Aggiunge blocchi ordinati a una nuova copia del documento.
 
 - **Document** ← 01 New / Document
-- **Blocks** ← 03 Heading / Block, 04 Paragraph / Block, 05 Break / Block, 06 Heading / Block, 07 Paragraph / Block, 08 Section / Block
+- **Blocks** ← 03 Heading / Block, 04 Paragraph / Block, 05 Break / Block, 06 Heading / Block, 07 Paragraph / Block, 08 Section / Block, 25 TextBlocks / Blocks
 - **Styles** (list): `opzionale / vuoto`
-- **Layout** ← 25 Layout / Layout
+- **Layout** ← 26 Layout / Layout
 
 ### 03 Heading — Heading
 
@@ -251,7 +255,13 @@ Ogni ramo del Data Tree è una riga; ogni elemento è una cella. Ordine dei path
 - **Header** (item): `True`
 - **Options** (item): `{   "HeaderFill": "24445C",   "StripeFill": "EEF3F6",   "BorderColor": "CBD5DD",   "PaddingMm": 2,   "StyleId": null }`
 
-### 25 Layout — Page Layout
+### 25 TextBlocks — Text Blocks
+
+Titoli, paragrafi, elenchi e formule da un testo unico. Doppio clic per aprire l'editor; sottoinsieme documentato, non Markdown completo.
+
+- **Text** (list): `--- | # Pagina da testo strutturato | Tre trattini isolati creano un'interruzione di pagina nativa.`
+
+### 26 Layout — Page Layout
 
 Dimensioni e margini in millimetri; intestazioni e piè di pagina.
 
@@ -263,35 +273,115 @@ Dimensioni e margini in millimetri; intestazioni e piè di pagina.
 - **Footer** (item): ``
 - **Advanced** (item): `{   "WidthMm": 210,   "HeightMm": 297,   "MarginMm": 20,   "Landscape": false,   "Header": "Intestazione dispari",   "Footer": "Pagina {{PAGE}} di {{NUMPAGES}}",   "FirstHeader": "Copertina",   "FirstFooter": "",   "EvenHeader": "Intestazione pari",   "EvenFooter": "Pagina {{PAGE}}",   "PageStart": null }`
 
-### 26 Inspect — Document Inspector
+### 27 PagePreset — Page Preset
+
+Pagina A4, A3, Letter o Legal con margini e intestazioni. Per impostazioni di sezione avanzate usare Page Layout.
+
+- **Format** (item): `A4`
+- **Landscape** (item): `False`
+- **Margin mm** (item): `20`
+- **Header** (item): `Pagina A4`
+- **Footer** (item): `Pagina {{PAGE}} di {{NUMPAGES}}`
+
+### 28 QuickDoc — Quick Document
+
+Crea un documento con titolo, blocchi ordinati e impostazioni opzionali. Il salvataggio resta esplicito in Save Word.
+
+- **Title** (item): `Prova A4`
+- **Blocks** (list): `opzionale / vuoto`
+- **Layout** ← 27 PagePreset / Layout
+- **Template path** (item): ``
+- **Styles** (list): `opzionale / vuoto`
+
+### 29 PagePreset — Page Preset
+
+Pagina A4, A3, Letter o Legal con margini e intestazioni. Per impostazioni di sezione avanzate usare Page Layout.
+
+- **Format** (item): `A3`
+- **Landscape** (item): `True`
+- **Margin mm** (item): `20`
+- **Header** (item): `Pagina A3`
+- **Footer** (item): `Pagina {{PAGE}} di {{NUMPAGES}}`
+
+### 30 QuickDoc — Quick Document
+
+Crea un documento con titolo, blocchi ordinati e impostazioni opzionali. Il salvataggio resta esplicito in Save Word.
+
+- **Title** (item): `Prova A3`
+- **Blocks** (list): `opzionale / vuoto`
+- **Layout** ← 29 PagePreset / Layout
+- **Template path** (item): ``
+- **Styles** (list): `opzionale / vuoto`
+
+### 31 PagePreset — Page Preset
+
+Pagina A4, A3, Letter o Legal con margini e intestazioni. Per impostazioni di sezione avanzate usare Page Layout.
+
+- **Format** (item): `Letter`
+- **Landscape** (item): `False`
+- **Margin mm** (item): `20`
+- **Header** (item): `Pagina Letter`
+- **Footer** (item): `Pagina {{PAGE}} di {{NUMPAGES}}`
+
+### 32 QuickDoc — Quick Document
+
+Crea un documento con titolo, blocchi ordinati e impostazioni opzionali. Il salvataggio resta esplicito in Save Word.
+
+- **Title** (item): `Prova Letter`
+- **Blocks** (list): `opzionale / vuoto`
+- **Layout** ← 31 PagePreset / Layout
+- **Template path** (item): ``
+- **Styles** (list): `opzionale / vuoto`
+
+### 33 PagePreset — Page Preset
+
+Pagina A4, A3, Letter o Legal con margini e intestazioni. Per impostazioni di sezione avanzate usare Page Layout.
+
+- **Format** (item): `Legal`
+- **Landscape** (item): `False`
+- **Margin mm** (item): `20`
+- **Header** (item): `Pagina Legal`
+- **Footer** (item): `Pagina {{PAGE}} di {{NUMPAGES}}`
+
+### 34 QuickDoc — Quick Document
+
+Crea un documento con titolo, blocchi ordinati e impostazioni opzionali. Il salvataggio resta esplicito in Save Word.
+
+- **Title** (item): `Prova Legal`
+- **Blocks** (list): `opzionale / vuoto`
+- **Layout** ← 33 PagePreset / Layout
+- **Template path** (item): ``
+- **Styles** (list): `opzionale / vuoto`
+
+### 35 Inspect — Document Inspector
 
 Struttura, stili, metadati e validazione; non è un'anteprima impaginata.
 
 - **Document** ← 02 Compose / Document
 
-### 27 Save — Save Word
+### 36 Save — Save Word
 
 Scrive solo sul fronte False→True. Dopo riapertura portare Run a False prima di salvare.
 
 - **Document** ← 02 Compose / Document
-- **Path** ← 28 Path / Full path
+- **Path** ← 37 Path / Full path
 - **Run** (item): `False`
 - **Overwrite** (item): `False`
 
-### 28 Path — Project Path
+### 37 Path — Project Path
 
 Risolve un percorso rispetto al file .gh salvato, per esempi portabili.
 
 - **Relative path** (item): `output.docx`
 
-### 29 Open — Open Result
+### 38 Open — Open Result
 
 Apre il DOCX nell'applicazione associata solo su comando esplicito.
 
-- **Path** ← 30 Path / Full path
+- **Path** ← 39 Path / Full path
 - **Run** (item): `False`
 
-### 30 Path — Project Path
+### 39 Path — Project Path
 
 Risolve un percorso rispetto al file .gh salvato, per esempi portabili.
 

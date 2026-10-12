@@ -111,6 +111,24 @@ public static class Examples
             },
             Features = all[2].Features.Concat(new[] { "style-character", "style-table" }).ToArray()
         };
+        foreach (int id in new[] { 2, 4, 8, 10 })
+        {
+            string input = InputSamples.TextFor(id);
+            all[id - 1] = all[id - 1] with { Document = all[id - 1].Document.Append(StructuredText.Parse(input, "example-" + id)), Features = all[id - 1].Features.Concat(new[] { "TextBlocksComponent" }).ToArray() };
+            string directory = Path.Combine(root, $"{id:00}-{all[id - 1].Slug}"); Directory.CreateDirectory(directory); File.WriteAllText(Path.Combine(directory, "testo.txt"), input);
+        }
+        void Features(int id, params string[] modes) => all[id - 1] = all[id - 1] with { Features = all[id - 1].Features.Concat(modes).Distinct().ToArray() };
+        all[5] = all[5] with { Document = all[5].Document with { Blocks = all[5].Document.Blocks.Select(b => b is Table ? SimpleInputs.FormatTable(b, "DCEAF2", "F3F6F8", "D9D9D9", 2.5) : b).ToImmutableArray() } };
+        Features(1, "QuickDocumentComponent", "TextBlocksComponent", "quick-document-empty-source", "editor-text-persistence");
+        Features(2, "text-blocks-heading-paragraph-bold-italic-escape", "text-blocks-line-list-input");
+        Features(3, "QuickDocumentComponent", "ParagraphFormatComponent", "TableFormatComponent", "quick-document-styles", "paragraph-format-style", "table-format-style-id");
+        Features(4, "text-blocks-bullet-number-nested-restart");
+        Features(5, "text-table-editor");
+        Features(6, "TableFormatComponent", "table-format-colors-padding-copy", "table-header-contrast", "table-format-preserve-merged-rich-cells");
+        Features(8, "text-blocks-inline-display-multiline-math");
+        Features(10, "text-blocks-page-break", "PagePresetComponent", "page-preset-A4-A3-Letter-Legal", "page-preset-portrait-landscape", "page-preset-header-footer-fields");
+        Features(14, "QuickDocumentComponent", "FillFieldsComponent", "quick-document-template", "fill-fields-parallel-lists", "fill-fields-strict-lenient", "fill-template-json-alternative-manual");
+        Features(20, "PagePresetComponent", "ParagraphFormatComponent", "paragraph-format-direct");
         return all;
     }
 }

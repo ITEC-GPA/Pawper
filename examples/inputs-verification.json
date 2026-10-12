@@ -1,0 +1,14 @@
+{
+  "Passed": 7,
+  "Checks": [
+    "editor applies persistent multiline input and reconstructs native blocks",
+    "structured text reports malformed input and recovers",
+    "text branches produce separate documents without duplication",
+    "editor does not overwrite connected input",
+    "format menus apply preset and alignment",
+    "editor dialogs render with multiline input and explicit apply cancel",
+    "twenty definitions from table release still resolve"
+  ],
+  "DialogsRendered": true,
+  "InteractiveMouseKeyboardTested": false
+}

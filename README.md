@@ -8,7 +8,7 @@ Plugin Grasshopper per generare documenti Word modificabili da contenuti paramet
 2. In Grasshopper aprire **File → Special Folders → Components Folder**.
 3. Chiudere Rhino. Creare una cartella `Pawper` nella cartella Components e copiarvi tutti i file di `bin` della root del progetto. Se si usa lo ZIP, copiare l'intera cartella `plugin/Pawper` della distribuzione. Tenere insieme `.gha` e tutte le DLL incluse; non copiare RhinoCommon, Grasshopper o GH_IO.
 4. Se Windows blocca i file scaricati, sbloccare l'archivio ZIP nelle sue proprietà prima di estrarlo.
-5. Riavviare Rhino e Grasshopper. Comparirà la scheda **Pawper** con 35 componenti e 7 parametri tipizzati.
+5. Riavviare Rhino e Grasshopper. Comparirà la scheda **Pawper** con 41 componenti e 7 parametri tipizzati.
 6. Aprire `examples/01-primo-documento/example.gh`. Impostare **Run** di Save Word su False, poi True. Verrà creato `output.docx` accanto alla definizione.
 
 Non è stata modificata automaticamente l'installazione Grasshopper personale.
@@ -18,6 +18,23 @@ Per aggiornare dalla prima versione con il nome provvisorio, rimuovere la preced
 ## Icone
 
 Il marchio è un foglio con una zampa. Le icone dei componenti e dei parametri sono disegnate per la griglia Grasshopper di 24 pixel, con simboli distinti per le funzioni. La cartella `assets/icons` contiene i PNG, il logo SVG e l'anteprima `pawper-icons.png`. Le icone sono generate dal codice del plugin, senza dipendenze grafiche aggiuntive.
+
+## Input rapidi
+
+Il percorso minimo è **Text Blocks → Quick Document → Save Word**. Scrivere il titolo in Quick Document e il contenuto in Text Blocks; il salvataggio resta sul trigger esplicito False→True.
+
+| Componente | Cosa semplifica |
+|---|---|
+| Text Blocks | Titoli, paragrafi, grassetto, corsivo, elenchi e formule native da un unico testo. |
+| Quick Document | Documento pronto da titolo e lista di blocchi, con template, layout e stili opzionali. |
+| Fill Fields | Placeholder da due liste Names/Values, senza JSON. |
+| Paragraph Format | Allineamento, spaziature, interlinea e Keep next tramite input diretti. |
+| Table Format | Colori selezionabili e margini di una tabella intera, preservando celle unite e contenuti. |
+| Page Preset | A4, A3, Letter e Legal, orientamento, margini, intestazione e piè di pagina. |
+
+**Text Blocks e Text Table hanno un editor integrato**: doppio clic sul componente oppure menu Modifica testo. È disponibile per input locali con un solo ramo; con un Panel collegato si modifica il Panel. Applica conserva il testo nella definizione, Annulla lascia il contenuto precedente. Page Preset e Paragraph Format offrono scelte anche nel menu contestuale.
+
+Esempi principali: [01 flusso minimo](examples/01-primo-documento/README.md), [02 testo](examples/02-testo-formattato/README.md), [06 colori tabella](examples/06-celle-e-unioni/README.md), [14 template](examples/14-template-testuale/README.md). La sintassi di Text Blocks è un sottoinsieme esplicito, documentato nel [manuale](docs/MANUALE.md#input-semplificati).
 
 ## Creare una tabella intera
 
@@ -35,6 +52,8 @@ Ogni cartella contiene `example.gh`, la guida passo passo con valori degli input
 
 ## Compilazione
 
+Chiudere Rhino prima della build se sta usando i file di `bin`: le DLL caricate impediscono a Windows di sostituire o eliminare la vecchia Release.
+
 Servono Windows, Rhino 8 installato e SDK .NET 8 (feature band 8.0.300 o successiva). Il percorso Rhino predefinito è `C:\Program Files\Rhino 8`; può essere modificato con la proprietà MSBuild `RhinoInstall`.
 
 ```powershell
@@ -44,6 +63,8 @@ Servono Windows, Rhino 8 installato e SDK .NET 8 (feature band 8.0.300 o success
 # Include generazione, riapertura e ricalcolo dei 20 file GH in Rhino.Inside:
 ./build.ps1 -Verify -Definitions
 ```
+
+Ogni build verifica anche la registrazione iniziale della categoria Grasshopper (`PawperPriority.PriorityLoad`): nome **Pawper**, abbreviazione **Paw**, simbolo **P** e icona categoria 16×16. Se questa prova fallisce, la precedente `bin` viene conservata. Il controllo usa il SDK locale e non apre Rhino.
 
 Gli strumenti di sviluppo non vengono installati nel plugin. `tools/Pawper.Verify` è un eseguibile di test senza Rhino né Word; `tools/Pawper.Definitions` usa Rhino.Inside e la licenza Rhino locale. Il test host usa un registro isolato dei componenti per evitare il caricamento degli altri plugin installati. Tale isolamento usa API interne esclusivamente nel generatore, non nel plugin distribuito.
 

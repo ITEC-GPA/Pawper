@@ -150,3 +150,78 @@ L'output viene prima costruito e validato in memoria, scritto in un file tempora
 Save Word Batch richiede gli stessi path nei due Data Tree, un documento e una destinazione per ramo. Controlla conteggi, estensioni DOCX, nomi duplicati ed esistenza dei file prima di scrivere. Ogni documento viene salvato atomicamente, ma il batch completo non è una transazione: gli esiti distinguono i documenti riusciti da quelli falliti.
 
 Open Result è un comando separato e apre soltanto un DOCX esistente nell'applicazione associata. Inspector costruisce e valida in memoria, senza salvare: è un riepilogo strutturale, non un'anteprima delle pagine.
+
+## Input semplificati
+
+### Text Blocks ed editor integrato
+
+Text Blocks riceve Text come lista: un singolo testo multilinea o le righe di un Panel nello stesso ramo. Restituisce una lista ordinata di blocchi nativi. Ogni ramo viene elaborato separatamente; non viene applicato Flatten. Per comporre un solo documento da più sorgenti, unire le liste nell'ordine desiderato e applicare Flatten solo quando è una scelta intenzionale. Elenchi generati da componenti o rami diversi hanno gruppi di numerazione distinti.
+
+Doppio clic sul corpo di Text Blocks/Text Table, oppure menu **Modifica testo…**, apre un editor con ritorni a capo, tabulazioni e barre di scorrimento. **Applica** salva il testo come input persistente e ricalcola; **Annulla** mantiene quello precedente. La modifica partecipa all'Undo Grasshopper. Se l'input ha sorgenti collegate o più di un ramo, l'editor locale è disabilitato: modificare il Panel o il singolo ramo. Nessuna lettura automatica degli appunti e nessun salvataggio DOCX dall'editor.
+
+```text
+# Dati del progetto
+Il risultato è **verificato**, il commento è *provvisorio*.
+Questa seconda riga resta nello stesso paragrafo.
+
+- Trave A
+  - Luce 6 m
+- Trave B
+
+1. Geometria
+2. Risultati
+
+La tensione vale $\sigma=\frac{N}{A}$.
+
+$$M=\frac{qL^2}{8}$$
+```
+
+Sintassi implementata:
+
+| Input | Risultato Word |
+|---|---|
+| Riga vuota | Separa paragrafi; più righe vuote non creano paragrafi vuoti. |
+| Righe consecutive | Un paragrafo con interruzioni di riga native. |
+| Da `# Titolo` a `######### Titolo` | Heading1…Heading9; spazio dopo # obbligatorio. |
+| `**testo**`, `*testo*`, `***testo***` | Grassetto, corsivo, entrambi. Delimitatori chiusi nello stesso paragrafo. |
+| `- testo` o `+ testo` | Elenco puntato. |
+| `1. testo`, `2. testo` | Elenco numerato. Un nuovo elenco inizia con 1; Word genera i numeri successivi. |
+| Due spazi iniziali per livello | Elenchi multilivello, livelli 0…8. Non usare TAB per indentare elenchi. |
+| Riga vuota o cambio tipo elenco | Avvia un nuovo gruppo di numerazione. |
+| `$formula$` | Formula OMML inline modificabile. |
+| `$$formula$$` su una riga | Formula OMML separata. |
+| Due righe contenenti solo `$$` | Racchiudono una formula su più righe di input, resa come un'unica formula Word. |
+| `---` su una riga | Interruzione di pagina. |
+| `\*`, `\$`, `\\`, `\#`, `\[`, `\]` | Simboli letterali. |
+
+Non è un interprete Markdown completo: link, immagini, tabelle, citazioni, blocchi di codice e numerazione delle equazioni usano i componenti dedicati. Le strutture riconoscibili non supportate (per esempio righe che iniziano con `|`, `>`, tre backtick, `![`) vengono rifiutate; altre sequenze non riconosciute restano testo. Asterischi o dollari non chiusi producono errore con numero di riga. Le formule usano lo stesso sottoinsieme LaTeX di Word Equation; nessun fallback a immagine. Le formule non acquisiscono grassetto/corsivo dagli asterischi esterni.
+
+Esempi 01, 02, 04, 08 e 10. I file `testo.txt` inclusi mostrano gli input riproducibili.
+
+### Quick Document
+
+Input: **Title** (facoltativo), **Blocks** (lista), **Layout** (facoltativo), **Template path** (DOCX/DOTX facoltativo), **Styles** (lista facoltativa). Output Document collegabile a Inspector, Fill Fields e Save Word.
+
+Senza template crea un documento vuoto, aggiunge Title con lo stile Word Title se non vuoto, poi Blocks nell'ordine della lista. Con template conserva il documento sorgente e aggiunge titolo/blocchi in fondo a una copia. Layout assente conserva l'impaginazione del template; Styles aggiunge/modifica stili tramite ID. Title non modifica i metadati: usare Document Metadata. Per sostituire punti interni del template usare Fill Fields oppure Fill Template e Template Target. Esempi 01, 03, 10 e 14.
+
+### Fill Fields
+
+Collegare Document; fornire due liste parallele **Names** e **Values** con uguale lunghezza. I nomi possono essere `Progetto` o `{{Progetto}}`, sono sensibili alle maiuscole e non possono essere duplicati dopo la normalizzazione. Nessuna ripetizione implicita di valori. Un valore vuoto sostituisce il token con testo vuoto. Per numeri formattati usare Format Number prima di Values.
+
+Le coppie si aggiungono alle sostituzioni del documento; un nome già impostato viene aggiornato nella copia. Un placeholder ripetuto viene sostituito ovunque; i placeholder divisi fra run mantengono la formattazione del primo run. Strict=True segnala, alla validazione/scrittura, token senza valore e nomi non presenti; Strict=False lascia i token non risolti e ignora i nomi inutilizzati. Questo componente riempie testo; per tabelle/immagini/sequenze in content control usare Fill Template. Esempio 14.
+
+### Paragraph Format
+
+Input diretti: Alignment (`left`, `center`, `right`, `both`; anche alias `justified`), Before/After in punti (0…1000), Line come multiplo (>0 e ≤10), Keep next booleano. Il menu contestuale offre i quattro allineamenti quando Alignment è locale. L'output **Format** è un testo serializzato già compatibile con **Paragraph.Format** e **Word Style.Paragraph format**, senza doverlo scrivere a mano. Per rientri e altre proprietà avanzate resta disponibile il formato JSON completo. Esempi 03 e 20.
+
+### Table Format
+
+Collegare il blocco di Quick Table, Text Table o Word Table a **Table**. Collegare Colour Swatch agli input Header, Stripe e Border, oppure impostarli localmente. Usare colori opachi: Alpha diverso da 255 viene rifiutato. **Padding mm** imposta i margini delle celle (0…50). **Style ID** vuoto conserva lo stile corrente, altrimenti applica l'ID indicato; lo stile deve esistere nel documento. Colori diretti e riempimenti delle singole celle prevalgono sullo stile.
+
+L'output è una nuova tabella: dati, larghezze, allineamenti, unioni e contenuti complessi restano invariati. Il riempimento specifico di una cella resta prioritario. Per le intestazioni il motore sceglie testo bianco o nero secondo il contrasto col riempimento effettivo. Esempi 03 e 06.
+
+### Page Preset
+
+**Format** sceglie A4 (210×297 mm), A3 (297×420), Letter (215,9×279,4), Legal (215,9×355,6); valore iniziale A4. Anche il menu contestuale offre i formati quando l'input è locale. **Landscape** attiva l'orientamento orizzontale; **Margin mm** imposta margini uniformi e deve lasciare area utile. **Header** e **Footer** sono testi; `{{PAGE}}` e `{{NUMPAGES}}` creano campi Word, non valori già calcolati.
+
+Collegare Layout a Quick Document, Compose o Word Section. Usare Page Layout per prima pagina, pari/dispari, ripartenza della numerazione e dimensioni personalizzate. I quattro preset sono pronti come varianti nell'esempio 10; l'esempio 20 usa A4 verticale e orizzontale nella relazione.

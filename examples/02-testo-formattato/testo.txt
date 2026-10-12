@@ -1,0 +1,5 @@
+# Testo da un unico input
+Un paragrafo con **grassetto**, *corsivo* e ***entrambi***.
+Questa riga resta nello stesso paragrafo.
+
+Simboli letterali: \* e \$.

@@ -8,16 +8,37 @@ public static class Program
     {
         Console.WriteLine("Starting definitions generator");
         RhinoInside.Resolver.Initialize();
+        Console.WriteLine("Rhino.Inside resolver ready");
         AppDomain.CurrentDomain.AssemblyResolve += (s, e) => { var name = new AssemblyName(e.Name).Name; foreach (var folder in new[] { @"C:\Program Files\Rhino 8\Plug-ins\Grasshopper", AppContext.BaseDirectory }) foreach (var ext in new[] { ".dll", ".gha" }) { string file = Path.Combine(folder, name + ext); if (File.Exists(file)) return Assembly.LoadFrom(file); } return null; };
         try
         {
+            if (args.Contains("--loading-check")) return CheckLoading(args);
+            if (args.Contains("--editor-render")) return RenderEditors(args);
             return Run(args);
         }
         catch (Exception ex) { Console.Error.WriteLine(ex); return 1; }
     }
     [MethodImpl(MethodImplOptions.NoInlining)]
+    static int CheckLoading(string[] args)
+    {
+        // Isolate category registration from the user's installed add-ons and Rhino UI.
+        var instances = typeof(global::Grasshopper.Instances);
+        instances.GetField("m_headless", BindingFlags.NonPublic | BindingFlags.Static)!.SetValue(null, true);
+        instances.GetField("m_comServer", BindingFlags.NonPublic | BindingFlags.Static)!.SetValue(null, new global::Grasshopper.Kernel.GH_ComponentServer());
+        LoadingChecks.Run(Path.GetFullPath(args[0]));
+        return 0;
+    }
+    [MethodImpl(MethodImplOptions.NoInlining)]
+    static int RenderEditors(string[] args)
+    {
+        InputIntegrationChecks.RenderDialogs(Path.GetFullPath(Path.Combine(args[0], "../qa/inputs")));
+        Console.WriteLine("Editor controls rendered without opening windows");
+        return 0;
+    }
+    [MethodImpl(MethodImplOptions.NoInlining)]
     static int Run(string[] args)
     {
+        Console.WriteLine("Starting Rhino native host");
         using var core = new Rhino.Runtime.InProcess.RhinoCore(["/NOSPLASH", "/NOTEMPLATE"], Rhino.Runtime.InProcess.WindowStyle.Hidden);
         Console.WriteLine("Rhino ready " + Rhino.RhinoApp.Version);
         return RunGrasshopper(args);

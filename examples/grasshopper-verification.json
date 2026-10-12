@@ -1,32 +1,32 @@
 [
   {
     "Id": 1,
-    "Objects": 9,
-    "Components": 9,
+    "Objects": 7,
+    "Components": 7,
     "Reopened": true,
     "ContentPreserved": true,
     "OpenXmlErrors": 0
   },
   {
     "Id": 2,
-    "Objects": 24,
-    "Components": 24,
+    "Objects": 25,
+    "Components": 25,
     "Reopened": true,
     "ContentPreserved": true,
     "OpenXmlErrors": 0
   },
   {
     "Id": 3,
-    "Objects": 38,
-    "Components": 38,
+    "Objects": 41,
+    "Components": 41,
     "Reopened": true,
     "ContentPreserved": true,
     "OpenXmlErrors": 0
   },
   {
     "Id": 4,
-    "Objects": 15,
-    "Components": 15,
+    "Objects": 16,
+    "Components": 16,
     "Reopened": true,
     "ContentPreserved": true,
     "OpenXmlErrors": 0
@@ -41,8 +41,8 @@
   },
   {
     "Id": 6,
-    "Objects": 22,
-    "Components": 22,
+    "Objects": 23,
+    "Components": 23,
     "Reopened": true,
     "ContentPreserved": true,
     "OpenXmlErrors": 0
@@ -57,8 +57,8 @@
   },
   {
     "Id": 8,
-    "Objects": 14,
-    "Components": 14,
+    "Objects": 15,
+    "Components": 15,
     "Reopened": true,
     "ContentPreserved": true,
     "OpenXmlErrors": 0
@@ -73,8 +73,8 @@
   },
   {
     "Id": 10,
-    "Objects": 30,
-    "Components": 30,
+    "Objects": 39,
+    "Components": 39,
     "Reopened": true,
     "ContentPreserved": true,
     "OpenXmlErrors": 0
@@ -105,8 +105,8 @@
   },
   {
     "Id": 14,
-    "Objects": 10,
-    "Components": 10,
+    "Objects": 9,
+    "Components": 9,
     "Reopened": true,
     "ContentPreserved": true,
     "OpenXmlErrors": 0
@@ -153,8 +153,8 @@
   },
   {
     "Id": 20,
-    "Objects": 26,
-    "Components": 26,
+    "Objects": 28,
+    "Components": 28,
     "Reopened": true,
     "ContentPreserved": true,
     "OpenXmlErrors": 0

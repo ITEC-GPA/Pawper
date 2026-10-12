@@ -270,10 +270,10 @@
         50
       ],
       "Header": true,
-      "HeaderFill": "24445C",
-      "StripeFill": "EEF3F6",
-      "BorderColor": "CBD5DD",
-      "PaddingMm": 2,
+      "HeaderFill": "DCEAF2",
+      "StripeFill": "F3F6F8",
+      "BorderColor": "D9D9D9",
+      "PaddingMm": 2.5,
       "StyleId": null
     }
   ],

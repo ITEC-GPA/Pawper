@@ -1,0 +1,8 @@
+# Formule da testo
+La tensione vale $\sigma=\frac{N}{A}$ nel modello dimostrativo.
+
+$$x_1^2+\sqrt{a}$$
+
+$$
+\sum_{i=1}^{n}{x_i}
+$$

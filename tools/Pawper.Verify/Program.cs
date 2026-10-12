@@ -41,6 +41,7 @@ Check("Batch output per document", () => { var d = examples[18].Document; var fo
 Check("Overwrite protection", () => { var path = Path.Combine(root, "01-primo-documento", "expected.docx"); byte[] before = File.ReadAllBytes(path); bool failed = false; try { Output.Save(Document.Empty, path); } catch (IOException) { failed = true; } Assert(failed && before.SequenceEqual(File.ReadAllBytes(path)), "File sovrascritto"); });
 Check("Locked file preserves original", () => { var path = Path.Combine(root, "01-primo-documento", "expected.docx"); byte[] before = File.ReadAllBytes(path); bool failed = false; using (var locked = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.None)) { try { Output.Save(Document.Empty, path, true); } catch (IOException) { failed = true; } } Assert(failed && before.SequenceEqual(File.ReadAllBytes(path)), "File bloccato modificato"); });
 TableChecks.Run(Check, Reject);
+SimpleInputChecks.Run(Check, Reject);
 File.WriteAllText(Path.Combine(root, "catalog.json"), Json.Write(examples.Select(e => new { e.Id, e.Slug, e.Title, e.Purpose, e.Features }).ToArray()));
 var report = new { Passed = passed, Failed = failures.Count, Failures = failures, Examples = examples.Count };
 File.WriteAllText(Path.Combine(root, "verification.json"), Json.Write(report));

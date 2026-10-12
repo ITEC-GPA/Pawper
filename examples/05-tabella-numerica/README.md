@@ -15,11 +15,13 @@ Rhino 8 con .NET 8 e Pawper installato. Conservare la cartella dentro examples, 
 
 1. Aprire example.gh e ricalcolare.
 2. Leggere Document Inspector: Validation deve essere vuoto.
-3. Modificare i valori degli input con il menu contestuale. I valori avanzati JSON sono già impostati.
+3. Modificare gli input dal menu contestuale; Text Blocks e Text Table offrono anche un editor con doppio clic. Dove presenti, i formati avanzati sono già impostati.
 4. In Save Word portare Run su False e poi True. output.docx sarà creato accanto alla definizione. Per sostituire un file esistente abilitare Overwrite.
 5. Ricalcolare con Run ancora True: non deve esserci una nuova scrittura.
 6. In Open Result portare Run su False e poi True.
 7. In Word aggiornare i campi con F9.
+
+Text Table offre lo stesso editor multilinea di Text Blocks: doppio clic, incolla il testo TSV/CSV e Applica. Annulla conserva i dati. Se Text è collegato, modificare il Panel sorgente.
 
 Percorso rapido: collegare il Block di Quick Table o Text Table a Blocks di Compose. Non servono Table Cell o Table Rows per queste tabelle.
 
@@ -37,7 +39,7 @@ Controlli ed errori: collegare Rows a un Panel per vedere la griglia; non applic
 
 ## Componenti e collegamenti
 
-I numeri corrispondono ai nickname nel canvas. I valori sono già salvati. Blocks di Compose usa esplicitamente Flatten per comporre un solo documento da tutte le sorgenti; rimuoverlo per elaborare rami separati.
+I numeri corrispondono ai nickname nel canvas. I valori sono già salvati. Dove presente, Blocks di Compose o Quick Document usa esplicitamente Flatten per comporre un solo documento da più sorgenti; rimuoverlo per elaborare rami separati.
 
 ### 01 New — New Document
 

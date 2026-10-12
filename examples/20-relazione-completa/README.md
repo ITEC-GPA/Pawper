@@ -15,15 +15,17 @@ Rhino 8 con .NET 8 e Pawper installato. Conservare la cartella dentro examples, 
 
 1. Aprire example.gh e ricalcolare.
 2. Leggere Document Inspector: Validation deve essere vuoto.
-3. Modificare i valori degli input con il menu contestuale. I valori avanzati JSON sono già impostati.
+3. Modificare gli input dal menu contestuale; Text Blocks e Text Table offrono anche un editor con doppio clic. Dove presenti, i formati avanzati sono già impostati.
 4. In Save Word portare Run su False e poi True. output.docx sarà creato accanto alla definizione. Per sostituire un file esistente abilitare Overwrite.
 5. Ricalcolare con Run ancora True: non deve esserci una nuova scrittura.
 6. In Open Result portare Run su False e poi True.
 7. In Word aggiornare i campi con F9.
 
+Paragraph Format: scegliere l'allineamento dal menu o dall'input; Before/After sono punti, Line è un multiplo. Collegare Format a Paragraph.Format oppure Word Style.Paragraph format. Keep next mantiene il paragrafo col successivo. Per rientri e opzioni aggiuntive resta disponibile il formato avanzato.
+
 ## Componenti e collegamenti
 
-I numeri corrispondono ai nickname nel canvas. I valori sono già salvati. Blocks di Compose usa esplicitamente Flatten per comporre un solo documento da tutte le sorgenti; rimuoverlo per elaborare rami separati.
+I numeri corrispondono ai nickname nel canvas. I valori sono già salvati. Dove presente, Blocks di Compose o Quick Document usa esplicitamente Flatten per comporre un solo documento da più sorgenti; rimuoverlo per elaborare rami separati.
 
 ### 01 New — New Document
 
@@ -36,9 +38,9 @@ Crea un documento vuoto oppure carica una copia di DOCX/DOTX.
 Aggiunge blocchi ordinati a una nuova copia del documento.
 
 - **Document** ← 01 New / Document
-- **Blocks** ← 03 Heading / Block, 04 Heading / Block, 05 Paragraph / Block, 06 Break / Block, 07 Heading / Block, 08 Field / Block, 09 Heading / Block, 10 QuickTable / Block, 11 Heading / Block, 12 Image / Block, 13 Equation / Block, 14 Paragraph / Block, 15 Note / Block, 16 Section / Block
+- **Blocks** ← 03 Heading / Block, 04 Heading / Block, 05 Paragraph / Block, 07 Break / Block, 08 Heading / Block, 09 Field / Block, 10 Heading / Block, 11 QuickTable / Block, 12 Heading / Block, 13 Image / Block, 14 Equation / Block, 15 Paragraph / Block, 17 Note / Block, 18 Section / Block
 - **Styles** (list): `opzionale / vuoto`
-- **Layout** ← 20 Layout / Layout
+- **Layout** ← 22 PagePreset / Layout
 
 ### 03 Heading — Heading
 
@@ -61,21 +63,31 @@ Paragrafo con testo, run misti e stile Word.
 - **Text** (item): `Esempio completo di documentazione parametrica generata da Grasshopper.`
 - **Runs** (list): `opzionale / vuoto`
 - **Style ID** (item): `Normal`
-- **Format** (item): ``
+- **Format** ← 06 ParaFormat / Format
 
-### 06 Break — Page Break
+### 06 ParaFormat — Paragraph Format
+
+Impostazioni del paragrafo con input diretti. Collegare Format a Paragraph oppure a Paragraph format di Word Style.
+
+- **Alignment** (item): `left`
+- **Before pt** (item): `0`
+- **After pt** (item): `6`
+- **Line** (item): `1.15`
+- **Keep next** (item): `False`
+
+### 07 Break — Page Break
 
 Interruzione di pagina.
 
 
-### 07 Heading — Heading
+### 08 Heading — Heading
 
 Titolo, sottotitolo o intestazione gerarchica.
 
 - **Text** (item): `Sommario`
 - **Level** (item): `1`
 
-### 08 Field — Word Field
+### 09 Field — Word Field
 
 Campo Word: TOC, SEQ, REF, PAGEREF, PAGE, NUMPAGES. Richiede aggiornamento in Word.
 
@@ -83,14 +95,14 @@ Campo Word: TOC, SEQ, REF, PAGEREF, PAGE, NUMPAGES. Richiede aggiornamento in Wo
 - **Placeholder** (item): `Aggiornare il campo in Word`
 - **Style ID** (item): `Normal`
 
-### 09 Heading — Heading
+### 10 Heading — Heading
 
 Titolo, sottotitolo o intestazione gerarchica.
 
 - **Text** (item): `Dati del modello`
 - **Level** (item): `1`
 
-### 10 QuickTable — Quick Table
+### 11 QuickTable — Quick Table
 
 Crea una tabella intera da righe o colonne di dati, con intestazioni e formattazione numerica diretta.
 
@@ -103,14 +115,14 @@ Crea una tabella intera da righe o colonne di dati, con intestazioni e formattaz
 - **Widths mm** (list): `70, 45, 40`
 - **Strict** (item): `False`
 
-### 11 Heading — Heading
+### 12 Heading — Heading
 
 Titolo, sottotitolo o intestazione gerarchica.
 
 - **Text** (item): `Schema e risultati`
 - **Level** (item): `1`
 
-### 12 Image — Word Image
+### 13 Image — Word Image
 
 Incorpora PNG/JPEG da percorso o Base64 mantenendo le proporzioni.
 
@@ -121,7 +133,7 @@ Incorpora PNG/JPEG da percorso o Base64 mantenendo le proporzioni.
 - **Format** (item): `png`
 - **Alignment** (item): `center`
 
-### 13 Equation — Word Equation
+### 14 Equation — Word Equation
 
 Formula LaTeX nel sottoinsieme documentato, convertita in OMML modificabile.
 
@@ -130,16 +142,26 @@ Formula LaTeX nel sottoinsieme documentato, convertita in OMML modificabile.
 - **Numbered** (item): `True`
 - **Bookmark** (item): `Momento`
 
-### 14 Paragraph — Paragraph
+### 15 Paragraph — Paragraph
 
 Paragrafo con testo, run misti e stile Word.
 
 - **Text** (item): `La formula e i dati hanno finalità dimostrative e non costituiscono una verifica strutturale.`
 - **Runs** (list): `opzionale / vuoto`
 - **Style ID** (item): `Normal`
-- **Format** (item): ``
+- **Format** ← 16 ParaFormat / Format
 
-### 15 Note — Word Note
+### 16 ParaFormat — Paragraph Format
+
+Impostazioni del paragrafo con input diretti. Collegare Format a Paragraph oppure a Paragraph format di Word Style.
+
+- **Alignment** (item): `left`
+- **Before pt** (item): `0`
+- **After pt** (item): `6`
+- **Line** (item): `1.15`
+- **Keep next** (item): `False`
+
+### 17 Note — Word Note
 
 Nota a piè di pagina o nota finale nativa.
 
@@ -147,33 +169,31 @@ Nota a piè di pagina o nota finale nativa.
 - **Text** (item): `Il modello rappresenta una trave semplicemente appoggiata.`
 - **Endnote** (item): `False`
 
-### 16 Section — Section
+### 18 Section — Section
 
 Inizia una nuova sezione con layout dedicato.
 
-- **Layout** ← 17 Layout / Layout
-- **Blocks** ← 18 Heading / Block, 19 QuickTable / Block
+- **Layout** ← 19 PagePreset / Layout
+- **Blocks** ← 20 Heading / Block, 21 QuickTable / Block
 
-### 17 Layout — Page Layout
+### 19 PagePreset — Page Preset
 
-Dimensioni e margini in millimetri; intestazioni e piè di pagina.
+Pagina A4, A3, Letter o Legal con margini e intestazioni. Per impostazioni di sezione avanzate usare Page Layout.
 
-- **Width mm** (item): `215.9`
-- **Height mm** (item): `279.4`
+- **Format** (item): `A4`
+- **Landscape** (item): `True`
 - **Margin mm** (item): `20`
-- **Landscape** (item): `False`
-- **Header** (item): ``
-- **Footer** (item): ``
-- **Advanced** (item): `{   "WidthMm": 210,   "HeightMm": 297,   "MarginMm": 20,   "Landscape": true,   "Header": "Appendice",   "Footer": "Pagina {{PAGE}}",   "FirstHeader": null,   "FirstFooter": null,   "EvenHeader": null,   "EvenFooter": null,   "PageStart": null }`
+- **Header** (item): `Appendice`
+- **Footer** (item): `Pagina {{PAGE}}`
 
-### 18 Heading — Heading
+### 20 Heading — Heading
 
 Titolo, sottotitolo o intestazione gerarchica.
 
 - **Text** (item): `Appendice tabellare`
 - **Level** (item): `1`
 
-### 19 QuickTable — Quick Table
+### 21 QuickTable — Quick Table
 
 Crea una tabella intera da righe o colonne di dati, con intestazioni e formattazione numerica diretta.
 
@@ -186,19 +206,17 @@ Crea una tabella intera da righe o colonne di dati, con intestazioni e formattaz
 - **Widths mm** (list): `70, 45, 40`
 - **Strict** (item): `False`
 
-### 20 Layout — Page Layout
+### 22 PagePreset — Page Preset
 
-Dimensioni e margini in millimetri; intestazioni e piè di pagina.
+Pagina A4, A3, Letter o Legal con margini e intestazioni. Per impostazioni di sezione avanzate usare Page Layout.
 
-- **Width mm** (item): `215.9`
-- **Height mm** (item): `279.4`
-- **Margin mm** (item): `20`
+- **Format** (item): `A4`
 - **Landscape** (item): `False`
-- **Header** (item): ``
-- **Footer** (item): ``
-- **Advanced** (item): `{   "WidthMm": 210,   "HeightMm": 297,   "MarginMm": 20,   "Landscape": false,   "Header": "Pawper \u2014 Relazione tecnica",   "Footer": "Pagina {{PAGE}} di {{NUMPAGES}}",   "FirstHeader": null,   "FirstFooter": null,   "EvenHeader": null,   "EvenFooter": null,   "PageStart": null }`
+- **Margin mm** (item): `20`
+- **Header** (item): `Pawper — Relazione tecnica`
+- **Footer** (item): `Pagina {{PAGE}} di {{NUMPAGES}}`
 
-### 21 Metadata — Document Metadata
+### 23 Metadata — Document Metadata
 
 Proprietà standard e personalizzate del documento.
 
@@ -209,35 +227,35 @@ Proprietà standard e personalizzate del documento.
 - **Keywords** (item): `relazione;Grasshopper`
 - **Custom** (item): `{}`
 
-### 22 Inspect — Document Inspector
+### 24 Inspect — Document Inspector
 
 Struttura, stili, metadati e validazione; non è un'anteprima impaginata.
 
-- **Document** ← 21 Metadata / Document
+- **Document** ← 23 Metadata / Document
 
-### 23 Save — Save Word
+### 25 Save — Save Word
 
 Scrive solo sul fronte False→True. Dopo riapertura portare Run a False prima di salvare.
 
-- **Document** ← 21 Metadata / Document
-- **Path** ← 24 Path / Full path
+- **Document** ← 23 Metadata / Document
+- **Path** ← 26 Path / Full path
 - **Run** (item): `False`
 - **Overwrite** (item): `False`
 
-### 24 Path — Project Path
+### 26 Path — Project Path
 
 Risolve un percorso rispetto al file .gh salvato, per esempi portabili.
 
 - **Relative path** (item): `output.docx`
 
-### 25 Open — Open Result
+### 27 Open — Open Result
 
 Apre il DOCX nell'applicazione associata solo su comando esplicito.
 
-- **Path** ← 26 Path / Full path
+- **Path** ← 28 Path / Full path
 - **Run** (item): `False`
 
-### 26 Path — Project Path
+### 28 Path — Project Path
 
 Risolve un percorso rispetto al file .gh salvato, per esempi portabili.
 
