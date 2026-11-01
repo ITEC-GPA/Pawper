@@ -118,6 +118,7 @@ public sealed class PawperPriority : GH_AssemblyPriority
         global::Grasshopper.Instances.ComponentServer.AddCategoryIcon("Pawper", PawperIcons.Create("Pawper", 16));
         global::Grasshopper.Instances.ComponentServer.AddCategoryShortName("Pawper", "Paw");
         global::Grasshopper.Instances.ComponentServer.AddCategorySymbolName("Pawper", 'P');
+        Gpc.PluginChecks.PluginBuildCheck.Start(typeof(PawperPriority).Assembly, "Pawper");
         return GH_LoadingInstruction.Proceed;
     }
 }
