@@ -1,4 +1,4 @@
-param([ValidatePattern('^[0-9]+\.[0-9]+\.[0-9]+(?:-[a-zA-Z0-9.-]+)?$')][string]$Version = '0.1.0')
+param([ValidatePattern('^[0-9]+\.[0-9]+\.[0-9]+(?:-[a-zA-Z0-9.-]+)?$')][string]$Version = '0.1.1')
 $ErrorActionPreference = 'Stop'
 $root = [IO.Path]::GetFullPath($PSScriptRoot)
 $bin = Join-Path $root 'bin'
