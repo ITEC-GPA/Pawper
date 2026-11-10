@@ -7,11 +7,18 @@ public static class Program
     public static int Main(string[] args)
     {
         Console.WriteLine("Starting definitions generator");
-        RhinoInside.Resolver.Initialize();
-        Console.WriteLine("Rhino.Inside resolver ready");
-        AppDomain.CurrentDomain.AssemblyResolve += (s, e) => { var name = new AssemblyName(e.Name).Name; foreach (var folder in new[] { @"C:\Program Files\Rhino 8\Plug-ins\Grasshopper", AppContext.BaseDirectory }) foreach (var ext in new[] { ".dll", ".gha" }) { string file = Path.Combine(folder, name + ext); if (File.Exists(file)) return Assembly.LoadFrom(file); } return null; };
         try
         {
+            string install = typeof(Program).Assembly.GetCustomAttributes<AssemblyMetadataAttribute>()
+                .Single(a => a.Key == "RhinoInstall").Value
+                ?? throw new InvalidOperationException("RhinoInstall non registrato nella build.");
+            string system = Path.Combine(install, "System");
+            string grasshopper = Path.Combine(install, "Plug-ins", "Grasshopper");
+            foreach (string file in new[] { Path.Combine(system, "RhinoCommon.dll"), Path.Combine(grasshopper, "Grasshopper.dll"), Path.Combine(grasshopper, "GH_IO.dll") })
+                if (!File.Exists(file)) throw new FileNotFoundException("Installazione Rhino non valida; ricompilare con -RhinoInstall: " + file, file);
+            RhinoInside.Resolver.Initialize(system);
+            Console.WriteLine("Rhino.Inside resolver ready: " + RhinoInside.Resolver.RhinoSystemDirectory);
+            AppDomain.CurrentDomain.AssemblyResolve += (s, e) => { var name = new AssemblyName(e.Name).Name; foreach (var folder in new[] { grasshopper, AppContext.BaseDirectory }) foreach (var ext in new[] { ".dll", ".gha" }) { string file = Path.Combine(folder, name + ext); if (File.Exists(file)) return Assembly.LoadFrom(file); } return null; };
             if (args.Contains("--loading-check")) return CheckLoading(args);
             if (args.Contains("--editor-render")) return RenderEditors(args);
             return Run(args);

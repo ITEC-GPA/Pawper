@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([switch]$Verify, [switch]$Definitions)
+param([switch]$Verify, [switch]$Definitions, [string]$RhinoInstall)
 
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
@@ -7,6 +7,17 @@ $projectRoot = [IO.Path]::GetFullPath($PSScriptRoot).TrimEnd([IO.Path]::Director
 $releaseDirectory = Join-Path $projectRoot 'bin'
 $buildDirectory = Join-Path $projectRoot ('.pawper-build-' + [Guid]::NewGuid().ToString('N'))
 $releaseFiles = @('Pawper.Grasshopper.gha', 'Pawper.Core.dll', 'DocumentFormat.OpenXml.dll', 'DocumentFormat.OpenXml.Framework.dll', 'System.IO.Packaging.dll')
+
+if ([string]::IsNullOrWhiteSpace($RhinoInstall)) {
+    [xml]$buildSettings = Get-Content -LiteralPath (Join-Path $projectRoot 'Directory.Build.props') -Raw
+    $RhinoInstall = $buildSettings.SelectSingleNode('/Project/PropertyGroup/RhinoInstall').InnerText
+}
+$RhinoInstall = [IO.Path]::GetFullPath($RhinoInstall)
+foreach ($relative in @('System/RhinoCommon.dll', 'System/Rhino.exe', 'Plug-ins/Grasshopper/Grasshopper.dll', 'Plug-ins/Grasshopper/GH_IO.dll')) {
+    if (-not (Test-Path -LiteralPath (Join-Path $RhinoInstall $relative) -PathType Leaf)) {
+        throw "Installazione Rhino non valida: manca $relative in '$RhinoInstall'. Specificare -RhinoInstall con la cartella di Rhino 8."
+    }
+}
 
 function Assert-ProjectPath([string]$Path) {
     $resolved = [IO.Path]::GetFullPath($Path)
@@ -58,7 +69,7 @@ try {
     New-Item -ItemType Directory -Path $buildDirectory | Out-Null
     Push-Location $projectRoot
     try {
-        $properties = @("-p:PawperBuildRoot=$buildDirectory", '-p:Configuration=Release', '-p:UseSharedCompilation=false')
+        $properties = @("-p:PawperBuildRoot=$buildDirectory", "-p:RhinoInstall=$RhinoInstall", '-p:Configuration=Release', '-p:UseSharedCompilation=false')
         $restored = $false
         for ($attempt = 1; $attempt -le 5; $attempt++) {
             & dotnet restore Pawper.sln @properties --disable-parallel
