@@ -4,7 +4,7 @@ Plugin Grasshopper per generare documenti Word modificabili da contenuti paramet
 
 ## Installazione
 
-1. Usare Rhino 8 su Windows a 64 bit, con runtime .NET 8. La build distribuita è compilata e collaudata con Rhino **8.35.26251.13001**. Per altre release Rhino 8 da 8.20 in avanti ricompilare contro le librerie locali; tali release non sono state eseguite in questo ambiente.
+1. Usare Rhino 8 su Windows a 64 bit, con runtime .NET 8. Build e caricamento sono verificati con Rhino **8.36.26296.17001**; i collaudi storici su 8.35 e le prove interattive ancora mancanti sono distinti in [VERIFICHE](docs/VERIFICHE.md). Per altre release Rhino 8 con .NET 8 ricompilare e collaudare contro le librerie locali.
 2. In Grasshopper aprire **File → Special Folders → Components Folder**.
 3. Chiudere Rhino. Creare una cartella `Pawper` nella cartella Components e copiarvi tutti i file di `bin` della root del progetto. Se si usa lo ZIP, copiare l'intera cartella `plugin/Pawper` della distribuzione. Tenere insieme `.gha` e tutte le DLL incluse; non copiare RhinoCommon, Grasshopper o GH_IO.
 4. Se Windows blocca i file scaricati, sbloccare l'archivio ZIP nelle sue proprietà prima di estrarlo.
@@ -13,7 +13,7 @@ Plugin Grasshopper per generare documenti Word modificabili da contenuti paramet
 
 Non è stata modificata automaticamente l'installazione Grasshopper personale.
 
-Per aggiornare dalla prima versione con il nome provvisorio, rimuovere la precedente cartella del plugin dalla cartella Components prima di copiare Pawper. Le due versioni usano gli stessi identificatori e non devono essere caricate insieme. I 33 componenti, i 7 parametri e l'identificatore della libreria restano compatibili con le definizioni esistenti.
+Per aggiornare dalla prima versione con il nome provvisorio, rimuovere la precedente cartella del plugin dalla cartella Components prima di copiare Pawper. Le due versioni usano gli stessi identificatori e non devono essere caricate insieme. Sono conservati i **41 identificatori originari**: 33 componenti, 7 parametri e la libreria. Gli 8 componenti aggiunti portano il totale attuale a **41 componenti e 7 parametri**, con 49 identificatori includendo la libreria.
 
 ## Icone
 
@@ -54,7 +54,7 @@ Ogni cartella contiene `example.gh`, la guida passo passo con valori degli input
 
 Chiudere Rhino prima della build se sta usando i file di `bin`: le DLL caricate impediscono a Windows di sostituire o eliminare la vecchia Release.
 
-Servono Windows, Rhino 8 installato e SDK .NET 8 (feature band 8.0.300 o successiva). Il percorso Rhino predefinito è `C:\Program Files\Rhino 8`; può essere modificato con la proprietà MSBuild `RhinoInstall`.
+Servono Windows, Rhino 8 installato e SDK .NET 8 (feature band 8.0.300 o successiva). Il percorso Rhino predefinito è `C:\Program Files\Rhino 8`, definito in `Directory.Build.props`. Il parametro `-RhinoInstall` di `build.ps1` seleziona la stessa installazione per compilazione e caricamento dei tool. Un percorso incompleto viene rifiutato prima della compilazione.
 
 ```powershell
 ./build.ps1
@@ -62,6 +62,8 @@ Servono Windows, Rhino 8 installato e SDK .NET 8 (feature band 8.0.300 o success
 ./build.ps1 -Verify
 # Include generazione, riapertura e ricalcolo dei 20 file GH in Rhino.Inside:
 ./build.ps1 -Verify -Definitions
+# Installazione personalizzata (cartella radice, non la sottocartella System):
+./build.ps1 -RhinoInstall 'D:\Applicazioni\Rhino 8' -Verify -Definitions
 ```
 
 Ogni build verifica anche la registrazione iniziale della categoria Grasshopper (`PawperPriority.PriorityLoad`): nome **Pawper**, abbreviazione **Paw**, simbolo **P** e icona categoria 16×16. Se questa prova fallisce, la precedente `bin` viene conservata. Il controllo usa il SDK locale e non apre Rhino.
@@ -80,7 +82,9 @@ In `bin` non vengono lasciati eseguibili di test, PDB, sottocartelle Debug/Relea
 
 Per ottenere questo comportamento usare sempre `./build.ps1`: una chiamata diretta a `dotnet build` o il comando Build dell'IDE non esegue la fase di raccolta e pulizia. I percorsi sono relativi al progetto e non dipendono dalla cartella in cui è salvato.
 
-`./package.ps1` crea facoltativamente uno ZIP in `dist` leggendo la Release da `bin`, senza mantenere una seconda cartella con copie degli assembly. Il pacchetto viene eliminato dalla successiva compilazione, per evitare di distribuire una versione obsoleta.
+`./package.ps1` crea facoltativamente uno ZIP in `dist` leggendo la Release da `bin`, senza mantenere una seconda cartella con copie degli assembly. La versione proviene da `Directory.Build.props`, come quella mostrata in Grasshopper; binari o un parametro `-Version` con una versione diversa vengono rifiutati. Per preparare una nuova versione aggiornare la proprietà `Version`, ricompilare, verificare e infine creare il pacchetto. Il pacchetto viene eliminato dalla successiva compilazione, per evitare di distribuire una versione obsoleta.
+
+Per build dirette con MSBuild usare `-p:RhinoInstall="D:\Applicazioni\Rhino 8"` con percorso assoluto. I tool registrano il percorso scelto alla compilazione: se si sposta Rhino, ricompilare.
 
 ## Architettura
 

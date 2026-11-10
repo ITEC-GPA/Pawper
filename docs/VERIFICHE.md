@@ -1,11 +1,21 @@
-# Verifiche della versione 0.1
+# Verifiche Pawper
+
+## Correzioni del 10 novembre 2026
+
+Ambiente corrente: Windows, SDK .NET 8.0.427, Rhino 8.36.26296.17001. La build e il controllo di caricamento sono stati rieseguiti dopo le correzioni al percorso Rhino e alla versione; zero errori e zero avvisi. Verificati il percorso predefinito e il parametro esplicito verso la stessa installazione. Un percorso inesistente viene rifiutato senza modificare la bin. Non è disponibile un secondo percorso di installazione per il collaudo alternativo completo.
+
+Verificati il confronto della versione esposta in Grasshopper con quella della build, la creazione dello ZIP e il rifiuto di versione richiesta o binari incoerenti. I riferimenti Git dei passi sono identificati dai commit `fix(build): share Rhino installation across compilation and test host` e `fix(version): derive plugin and package versions from build metadata`.
+
+I risultati di ottobre riportati sotto sono storici: non costituiscono un nuovo collaudo interattivo o visivo della build corrente. I rapporti in examples possono essere rigenerati dai tool; per attribuire un risultato usare anche la revisione Git e la data del collaudo.
+
+## Collaudo storico del 9 ottobre 2026 — serie 0.1
 
 Collaudo eseguito il 9 ottobre 2026 su Windows, Rhino 8.35.26251.13001 e .NET 8. Build della soluzione senza errori e senza avvisi. Il plugin distribuito non richiede Word per generare i documenti.
 
 Il progetto è stato rinominato Pawper: soluzione, progetti, namespace, assembly, cartelle, documentazione e contenuti dimostrativi. Gli identificatori persistenti della prima versione sono conservati. Il rapporto `examples/branding-verification.json` registra la verifica delle icone e la riapertura delle definizioni precedenti.
 
 - **48 icone 24 × 24 verificate** sui componenti e parametri reali, più il marchio della libreria; esportate in PNG e ispezionate visivamente. Incluso il logo SVG.
-- **20 definizioni della versione precedente riaperte con Pawper**, senza componenti mancanti. Conservati tutti i 41 identificatori persistenti di componenti, parametri e libreria.
+- **20 definizioni della versione precedente riaperte con Pawper**, senza componenti mancanti. Conservati i 41 identificatori originari: 33 componenti, 7 parametri e libreria. Con gli 8 componenti aggiunti il totale attuale è 49 identificatori, di cui 48 relativi a oggetti del canvas.
 
 ## Correzione del caricamento della categoria
 
