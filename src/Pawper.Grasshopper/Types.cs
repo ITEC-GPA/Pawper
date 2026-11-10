@@ -86,7 +86,7 @@ public sealed class AssemblyInfo : GH_AssemblyInfo
     public override Bitmap Icon => PawperIcons.Create("Pawper");
     public override string Description => "Documenti Word parametrici e modificabili, senza automazione Office.";
     public override Guid Id => Identity.Id("Assembly");
-    public override string AuthorName => "Pawper contributors";
+    public override string AuthorName => "ITEC Engineering";
     public override string AuthorContact => "";
     public override string AssemblyVersion => typeof(AssemblyInfo).Assembly
         .GetCustomAttributes(typeof(System.Reflection.AssemblyInformationalVersionAttribute), false)

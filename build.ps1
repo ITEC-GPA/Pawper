@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([switch]$Verify, [switch]$Definitions, [string]$RhinoInstall)
+param([switch]$Verify, [switch]$Definitions, [string]$RhinoInstall, [string]$VerificationDirectory = 'examples')
 
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
@@ -69,6 +69,11 @@ try {
     New-Item -ItemType Directory -Path $buildDirectory | Out-Null
     Push-Location $projectRoot
     try {
+        $VerificationDirectory = [IO.Path]::GetFullPath($VerificationDirectory)
+        Assert-ProjectPath $VerificationDirectory
+        if ($Definitions -and -not (Test-Path -LiteralPath (Join-Path $VerificationDirectory 'catalog.json'))) {
+            throw 'Per -Definitions copiare prima examples nella cartella VerificationDirectory.'
+        }
         $properties = @("-p:PawperBuildRoot=$buildDirectory", "-p:RhinoInstall=$RhinoInstall", '-p:Configuration=Release', '-p:UseSharedCompilation=false')
         $restored = $false
         for ($attempt = 1; $attempt -le 5; $attempt++) {
@@ -84,15 +89,15 @@ try {
         if ($LASTEXITCODE -ne 0) { throw 'Compilazione fallita; bin precedente conservata.' }
 
         # Test the real Grasshopper startup callback before publishing any build.
-        & dotnet (Join-Path $buildDirectory 'bin/Pawper.Definitions/Release/net8.0-windows/Pawper.Definitions.dll') examples --loading-check
+        & dotnet (Join-Path $buildDirectory 'bin/Pawper.Definitions/Release/net8.0-windows/Pawper.Definitions.dll') $VerificationDirectory --loading-check
         if ($LASTEXITCODE -ne 0) { throw 'Registrazione Grasshopper fallita; bin precedente conservata.' }
 
         if ($Verify) {
-            & dotnet (Join-Path $buildDirectory 'bin/Pawper.Verify/Release/net8.0/Pawper.Verify.dll') examples
+            & dotnet (Join-Path $buildDirectory 'bin/Pawper.Verify/Release/net8.0/Pawper.Verify.dll') $VerificationDirectory
             if ($LASTEXITCODE -ne 0) { throw 'Verifiche motore fallite; bin precedente conservata.' }
         }
         if ($Definitions) {
-            & dotnet (Join-Path $buildDirectory 'bin/Pawper.Definitions/Release/net8.0-windows/Pawper.Definitions.dll') examples
+            & dotnet (Join-Path $buildDirectory 'bin/Pawper.Definitions/Release/net8.0-windows/Pawper.Definitions.dll') $VerificationDirectory
             if ($LASTEXITCODE -ne 0) { throw 'Verifiche Grasshopper fallite; bin precedente conservata.' }
         }
 

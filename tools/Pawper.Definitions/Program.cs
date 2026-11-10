@@ -29,9 +29,7 @@ public static class Program
     static int CheckLoading(string[] args)
     {
         // Isolate category registration from the user's installed add-ons and Rhino UI.
-        var instances = typeof(global::Grasshopper.Instances);
-        instances.GetField("m_headless", BindingFlags.NonPublic | BindingFlags.Static)!.SetValue(null, true);
-        instances.GetField("m_comServer", BindingFlags.NonPublic | BindingFlags.Static)!.SetValue(null, new global::Grasshopper.Kernel.GH_ComponentServer());
+        GrasshopperCompatibility.CreateIsolatedRegistry();
         LoadingChecks.Run(Path.GetFullPath(args[0]));
         return 0;
     }
@@ -72,14 +70,12 @@ public static class Program
         }
         // Test harness only: use an isolated component registry instead of loading the user's installed add-ons.
         Console.WriteLine("Creating isolated Grasshopper registry");
-        var instances = typeof(global::Grasshopper.Instances);
-        instances.GetField("m_headless", BindingFlags.NonPublic | BindingFlags.Static)!.SetValue(null, true);
-        instances.GetField("m_comServer", BindingFlags.NonPublic | BindingFlags.Static)!.SetValue(null, new global::Grasshopper.Kernel.GH_ComponentServer());
+        GrasshopperCompatibility.CreateIsolatedRegistry();
         // Generic persistent inputs resolve GH_Number/GH_String by type name during archive reads.
         // Register the SDK's own types, without discovering any of the user's third-party plugins.
         var ghAssembly = typeof(global::Grasshopper.Kernel.Types.GH_Number).Assembly;
-        var parse = typeof(global::Grasshopper.Kernel.GH_ComponentServer).GetMethods(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public)
-            .Single(m => m.Name == "ParseGHA" && m.GetParameters().Length == 3);
+        var parse = GrasshopperCompatibility.RequireMethod(typeof(global::Grasshopper.Kernel.GH_ComponentServer),
+            "ParseGHA", typeof(global::Grasshopper.Kernel.GH_AssemblyInfo), typeof(Assembly), typeof(string), typeof(global::Grasshopper.Kernel.GH_LoadingMechanism));
         parse.Invoke(global::Grasshopper.Instances.ComponentServer, [ghAssembly, ghAssembly.Location, global::Grasshopper.Kernel.GH_LoadingMechanism.Direct]);
         Console.WriteLine("Grasshopper registry ready");
         if (args.Contains("--capture-test")) return CaptureSmoke.Run(Path.GetFullPath(args[0]));

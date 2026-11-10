@@ -468,7 +468,7 @@ public sealed class DefinitionBuilder
     public static int Run(string root)
     {
         var server = Instances.ComponentServer;
-        var load = typeof(GH_ComponentServer).GetMethod("LoadGHA", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public)!;
+        var load = GrasshopperCompatibility.RequireMethod(typeof(GH_ComponentServer), "LoadGHA", typeof(bool), typeof(GH_ExternalFile), typeof(bool));
         var plugin = typeof(NewDocumentComponent).Assembly.Location;
         Console.WriteLine("Registering " + plugin);
         if (!(bool)load.Invoke(server, [new GH_ExternalFile(plugin), false])!)

@@ -8,6 +8,7 @@ internal static class LoadingChecks
 {
     internal static void Run(string examples)
     {
+        GrasshopperCompatibility.VerifyDiagnostics();
         string pluginVersion = new AssemblyInfo().AssemblyVersion;
         string hostVersion = System.Reflection.CustomAttributeExtensions
             .GetCustomAttribute<System.Reflection.AssemblyInformationalVersionAttribute>(typeof(LoadingChecks).Assembly)!
@@ -30,6 +31,7 @@ internal static class LoadingChecks
         {
             Success = true,
             PluginVersion = pluginVersion,
+            CompatibilityDiagnosticsChecked = 3,
             EntryPoint = "PawperPriority.PriorityLoad",
             Category = "Pawper",
             ShortName = shortName,

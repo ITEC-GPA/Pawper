@@ -70,6 +70,8 @@ Ogni build verifica anche la registrazione iniziale della categoria Grasshopper 
 
 Gli strumenti di sviluppo non vengono installati nel plugin. `tools/Pawper.Verify` è un eseguibile di test senza Rhino né Word; `tools/Pawper.Definitions` usa Rhino.Inside e la licenza Rhino locale. Il test host usa un registro isolato dei componenti per evitare il caricamento degli altri plugin installati. Tale isolamento usa API interne esclusivamente nel generatore, non nel plugin distribuito.
 
+Per eseguire il collaudo senza rigenerare gli esempi versionati, copiarli in una cartella del progetto (ad esempio `qa/release-check/examples`) e passare `-VerificationDirectory qa/release-check/examples`. I tool scrivono lì i risultati, e nelle cartelle sorelle `assets` e `qa` gli intermedi. Le verifiche delle definizioni storiche si eseguono solo se sono presenti le copie `qa/before-rename` e `qa/before-inputs` relative alla nuova radice; in loro assenza non vanno dichiarate eseguite. La diagnostica del test host identifica versione SDK e membro interno mancante o incompatibile.
+
 `build.ps1` è il comando di compilazione e consegna del progetto: compila l'intera soluzione esclusivamente in **Release** in una cartella temporanea, poi pubblica direttamente nella cartella **`bin` della root** questi cinque file:
 
 - `Pawper.Grasshopper.gha`
