@@ -5,3 +5,7 @@
 .vs/
 qa/
 *.user
+/examples/**/*.tmp
+/examples/**/~$*
+/examples/**/output.docx
+/examples/**/batch-live-*.docx

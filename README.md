@@ -86,6 +86,8 @@ Per ottenere questo comportamento usare sempre `./build.ps1`: una chiamata diret
 
 Per build dirette con MSBuild usare `-p:RhinoInstall="D:\Applicazioni\Rhino 8"` con percorso assoluto. I tool registrano il percorso scelto alla compilazione: se si sposta Rhino, ricompilare.
 
+Il pacchetto esclude file temporanei Word, `batch-live-*` e gli `output.docx` locali degli esempi. I risultati di riferimento `expected.docx` e `grasshopper-verified.docx` restano inclusi. Dopo il confezionamento eseguire `./tools/verify-package.ps1 -Path dist/Pawper-<versione>.zip`: controlla i cinque file plugin, i venti esempi completi e tutti gli hash del manifest senza estrarre lo ZIP.
+
 ## Architettura
 
 - `Pawper.Core`: record immutabili, composizione, parser LaTeX, generatore Open XML, template, validazione e salvataggio atomico.

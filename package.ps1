@@ -28,7 +28,7 @@ try {
     foreach ($area in @('src', 'tools', 'examples', 'docs', 'licenses', 'assets')) {
         foreach ($file in Get-ChildItem -LiteralPath (Join-Path $root $area) -Recurse -File) {
             $relative = $file.FullName.Substring($root.Length + 1)
-            if ($relative -match '(^|[\\/])(bin|obj)([\\/]|$)' -or $file.Name -like '~$*' -or $file.Name -like '*.tmp' -or $file.Name -like 'batch-live-*') { continue }
+            if ($relative -match '(^|[\\/])(bin|obj)([\\/]|$)' -or $file.Name -like '~$*' -or $file.Name -like '*.tmp' -or $file.Name -like 'batch-live-*' -or ($area -eq 'examples' -and $file.Name -eq 'output.docx')) { continue }
             $destination = Join-Path $stage $relative
             New-Item -ItemType Directory -Force -Path (Split-Path $destination) | Out-Null
             Copy-Item -LiteralPath $file.FullName -Destination $destination
