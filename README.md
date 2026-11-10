@@ -1,5 +1,7 @@
 # Pawper
 
+Versione **0.1.2**.
+
 Plugin Grasshopper per generare documenti Word modificabili da contenuti parametrici. Il motore crea DOCX senza Microsoft Word installato. La distribuzione comprende il plugin compilato, i sorgenti e 20 esempi completi con definizione Grasshopper e risultato Word.
 
 ## Installazione

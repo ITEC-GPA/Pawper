@@ -2,6 +2,16 @@
 
 ## Correzioni del 10 novembre 2026
 
+Release **0.1.2**. Il rapporto [verification-0.1.2.json](verification-0.1.2.json) registra ambiente, revisione implementativa `6072831`, modifiche della candidata di release e risultati. La candidata è stata compilata con la versione 0.1.2; il successivo commit di release raccoglie versione, documentazione e rapporti, senza ulteriori modifiche alla logica verificata.
+
+Il collaudo completo della candidata ha superato **97/97 controlli del motore**, **20 definizioni Grasshopper salvate/riaperte/ricalcolate** con contenuti conservati e zero errori Open XML, **7 controlli d'integrazione**, **48 icone**, la lettura delle **20 definizioni originarie** e delle **20 della versione con tabelle rapide**. Verificati anche tre casi negativi della diagnostica delle API interne. Gli output sono in `qa/release-check`, separati dagli esempi versionati; i cinque rapporti automatici pertinenti sono aggiornati in `examples`.
+
+Lo ZIP 0.1.2 supera il controllo dei cinque file plugin, dei venti esempi completi e del manifest SHA256. I sette file temporanei/output locali precedentemente tracciati sono stati rimossi dal versionamento, conservandone le copie locali; non entrano nel pacchetto. La versione mostrata in Grasshopper e quella del pacchetto derivano dalla proprietà comune `Version`.
+
+Nel primo tentativo sulla candidata 0.1.1, Windows ha impedito la sostituzione del DOCX dell'esempio 11 nella copia QA (96/97). Il successivo controllo di accesso esclusivo è riuscito. La ripetizione completa e il collaudo 0.1.2 hanno superato 97/97 senza modificare il motore di salvataggio; la causa del blocco iniziale non è stata determinata. I log locali sono `qa/release-check/build.log`, `build-retry.log` e `build-0.1.2.log`.
+
+**Non ripetuti in questo intervento:** avvio in Rhino visibile, cattura viewport, uso dell'editor con mouse/tastiera e rendering/ispezione delle pagine in Word. I relativi risultati storici non sono estesi alla nuova release. La licenza pubblica e il contatto pubblico restano da definire; autore del plugin: ITEC Engineering.
+
 Ambiente corrente: Windows, SDK .NET 8.0.427, Rhino 8.36.26296.17001. La build e il controllo di caricamento sono stati rieseguiti dopo le correzioni al percorso Rhino e alla versione; zero errori e zero avvisi. Verificati il percorso predefinito e il parametro esplicito verso la stessa installazione. Un percorso inesistente viene rifiutato senza modificare la bin. Non è disponibile un secondo percorso di installazione per il collaudo alternativo completo.
 
 Verificati il confronto della versione esposta in Grasshopper con quella della build, la creazione dello ZIP e il rifiuto di versione richiesta o binari incoerenti. I riferimenti Git dei passi sono identificati dai commit `fix(build): share Rhino installation across compilation and test host` e `fix(version): derive plugin and package versions from build metadata`.

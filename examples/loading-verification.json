@@ -1,6 +1,7 @@
 {
   "Success": true,
-  "PluginVersion": "0.1.1",
+  "PluginVersion": "0.1.2",
+  "CompatibilityDiagnosticsChecked": 3,
   "EntryPoint": "PawperPriority.PriorityLoad",
   "Category": "Pawper",
   "ShortName": "Paw",

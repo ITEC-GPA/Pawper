@@ -1,0 +1,80 @@
+{
+  "Version": "0.1.2",
+  "VerificationDate": "2026-11-10",
+  "TimeZone": "Europe/Rome",
+  "ImplementationCommit": "60728319d43e721905872925843f385eb2957cb6",
+  "CandidateChanges": [
+    "Directory.Build.props: Version=0.1.2",
+    "README.md: release version heading"
+  ],
+  "CandidateInformationalVersion": "0.1.2+60728319d43e721905872925843f385eb2957cb6",
+  "DotnetSdk": "8.0.427",
+  "RhinoSdk": "8.36.26296.17001",
+  "BuildWarnings": 0,
+  "BuildErrors": 0,
+  "Core": {
+    "Passed": 97,
+    "Failed": 0,
+    "Failures": [],
+    "Examples": 20
+  },
+  "GrasshopperDefinitions": {
+    "ContentPreserved": true,
+    "Count": 20,
+    "OpenXmlErrors": 0
+  },
+  "Branding": {
+    "Name": "Pawper",
+    "Components": 41,
+    "Parameters": 7,
+    "Icons": 48,
+    "PersistentIdsPreserved": 41,
+    "NewIds": 8,
+    "PreviousDefinitionsReopened": 20
+  },
+  "InputIntegration": {
+    "Passed": 7,
+    "Checks": [
+      "editor applies persistent multiline input and reconstructs native blocks",
+      "structured text reports malformed input and recovers",
+      "text branches produce separate documents without duplication",
+      "editor does not overwrite connected input",
+      "format menus apply preset and alignment",
+      "editor dialogs render with multiline input and explicit apply cancel",
+      "twenty definitions from table release still resolve"
+    ],
+    "DialogsRendered": true,
+    "InteractiveMouseKeyboardTested": false
+  },
+  "Loading": {
+    "Success": true,
+    "PluginVersion": "0.1.2",
+    "CompatibilityDiagnosticsChecked": 3,
+    "EntryPoint": "PawperPriority.PriorityLoad",
+    "Category": "Pawper",
+    "ShortName": "Paw",
+    "Symbol": "P",
+    "IconWidth": 16,
+    "IconHeight": 16,
+    "Instruction": "Proceed",
+    "SdkAssembly": "8.36.26296.17001",
+    "VisibleRhinoStartupTested": false
+  },
+  "PackageContentsAndHashesVerified": true,
+  "NegativeChecks": [
+    "Missing Rhino installation rejected without changing bin",
+    "Requested version different from project rejected",
+    "Binary version different from project rejected",
+    "Corrupted archive rejected by SHA256 verification"
+  ],
+  "SharedPluginBuildCheck": "Content matches BridGHe reference; only line endings differ; unchanged",
+  "EarlierAttempt": "First 0.1.1 QA run: 96/97, Windows could not replace one copied DOCX. Exclusive access then succeeded. Repeated complete 0.1.1 run and complete 0.1.2 run both passed 97/97 without production code changes.",
+  "NotRetested": [
+    "Visible Rhino startup",
+    "Viewport capture in visible Rhino",
+    "Interactive editor mouse and keyboard",
+    "Word rendering and visual page inspection",
+    "Second Rhino installation path"
+  ],
+  "PublicLicense": "Pending"
+}
