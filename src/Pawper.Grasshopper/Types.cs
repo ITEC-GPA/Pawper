@@ -88,5 +88,7 @@ public sealed class AssemblyInfo : GH_AssemblyInfo
     public override Guid Id => Identity.Id("Assembly");
     public override string AuthorName => "Pawper contributors";
     public override string AuthorContact => "";
-    public override string AssemblyVersion => "0.1.0";
+    public override string AssemblyVersion => typeof(AssemblyInfo).Assembly
+        .GetCustomAttributes(typeof(System.Reflection.AssemblyInformationalVersionAttribute), false)
+        .Cast<System.Reflection.AssemblyInformationalVersionAttribute>().Single().InformationalVersion.Split('+')[0];
 }

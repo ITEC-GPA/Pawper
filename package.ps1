@@ -1,10 +1,20 @@
-param([ValidatePattern('^[0-9]+\.[0-9]+\.[0-9]+(?:-[a-zA-Z0-9.-]+)?$')][string]$Version = '0.1.1')
+param([ValidatePattern('^[0-9]+\.[0-9]+\.[0-9]+(?:-[a-zA-Z0-9.-]+)?$')][string]$Version)
 $ErrorActionPreference = 'Stop'
 $root = [IO.Path]::GetFullPath($PSScriptRoot)
+[xml]$buildSettings = Get-Content -LiteralPath (Join-Path $root 'Directory.Build.props') -Raw
+$projectVersion = $buildSettings.SelectSingleNode('/Project/PropertyGroup/Version').InnerText
+if (-not $Version) { $Version = $projectVersion }
+if ($Version -ne $projectVersion) { throw "Versione pacchetto '$Version' diversa dal progetto '$projectVersion'. Aggiornare Directory.Build.props e ricompilare." }
 $bin = Join-Path $root 'bin'
 $files = @('Pawper.Grasshopper.gha', 'Pawper.Core.dll', 'DocumentFormat.OpenXml.dll', 'DocumentFormat.OpenXml.Framework.dll', 'System.IO.Packaging.dll')
 foreach ($name in $files) {
     if (-not (Test-Path -LiteralPath (Join-Path $bin $name) -PathType Leaf)) { throw "Release mancante: eseguire prima ./build.ps1 ($name)." }
+}
+foreach ($name in @('Pawper.Grasshopper.gha', 'Pawper.Core.dll')) {
+    $builtVersion = [Diagnostics.FileVersionInfo]::GetVersionInfo((Join-Path $bin $name)).ProductVersion
+    if (-not $builtVersion -or $builtVersion.Split('+')[0] -ne $Version) {
+        throw "Versione binaria non coerente per ${name}: '$builtVersion', attesa '$Version'. Ricompilare prima di creare il pacchetto."
+    }
 }
 $dist = Join-Path $root 'dist'
 $temporary = Join-Path $dist ('.package-' + [Guid]::NewGuid().ToString('N'))

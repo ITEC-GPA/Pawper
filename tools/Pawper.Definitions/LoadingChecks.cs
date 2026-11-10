@@ -8,6 +8,12 @@ internal static class LoadingChecks
 {
     internal static void Run(string examples)
     {
+        string pluginVersion = new AssemblyInfo().AssemblyVersion;
+        string hostVersion = System.Reflection.CustomAttributeExtensions
+            .GetCustomAttribute<System.Reflection.AssemblyInformationalVersionAttribute>(typeof(LoadingChecks).Assembly)!
+            .InformationalVersion.Split('+')[0];
+        if (pluginVersion != hostVersion)
+            throw new InvalidOperationException($"Versione Grasshopper '{pluginVersion}' diversa dalla build '{hostVersion}'.");
         // Exercise the actual startup callback: component construction alone skips it.
         var instruction = new PawperPriority().PriorityLoad();
         if (instruction != GH_LoadingInstruction.Proceed)
@@ -23,6 +29,7 @@ internal static class LoadingChecks
         File.WriteAllText(Path.Combine(examples, "loading-verification.json"), Json.Write(new
         {
             Success = true,
+            PluginVersion = pluginVersion,
             EntryPoint = "PawperPriority.PriorityLoad",
             Category = "Pawper",
             ShortName = shortName,
